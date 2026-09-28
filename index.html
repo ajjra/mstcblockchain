@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSTC Blockchain | AJJRA TECHNO HUB</title>
+
+<meta name="description"
+content="MSTC Blockchain - Complete information about MST Blockchain, MSTC, Layer 1, EVM, PoSA, Validators, Staking, Rewards, Network, Mainnet and Testnet.">
+
+<meta name="keywords"
+content="MSTC, MST Blockchain, MST Coin, MSTC Blockchain, Layer 1, EVM, PoSA, Validator, Staking, MSTC Rewards, MSTScan, Web3">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#06130d;
+    color:#eafff1;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(3,18,11,.97);
+    border-bottom:1px solid #174b31;
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    color:#4bea8d;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.nav-links a{
+    color:#c6dfce;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#4bea8d;
+}
+
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:95px 20px;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #12472a 0%,
+        #06130d 58%
+    );
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border:1px solid #2c8852;
+    border-radius:30px;
+
+    color:#69f39e;
+
+    font-size:13px;
+
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(48px,9vw,86px);
+    color:#50ef92;
+    line-height:1.05;
+    margin-bottom:18px;
+}
+
+.hero h2{
+    font-size:clamp(22px,4vw,36px);
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+
+    color:#bad4c4;
+
+    font-size:17px;
+}
+
+.buttons{
+    margin-top:32px;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:14px;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:14px 23px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#35da79;
+    color:#031008;
+}
+
+.btn-secondary{
+    border:1px solid #318454;
+    color:#72f1a4;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:.9;
+}
+
+
+/* GENERAL */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:75px 20px;
+}
+
+.dark-section{
+    background:#041009;
+
+    border-top:1px solid #123d27;
+    border-bottom:1px solid #123d27;
+}
+
+.section-title{
+    text-align:center;
+
+    color:#55ef94;
+
+    font-size:35px;
+
+    margin-bottom:42px;
+}
+
+.section-description{
+    max-width:850px;
+
+    margin:-20px auto 40px;
+
+    text-align:center;
+
+    color:#b7d0c0;
+}
+
+
+/* CARDS */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.card{
+    background:#0a2015;
+
+    border:1px solid #194d32;
+
+    border-radius:17px;
+
+    padding:26px;
+
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+
+    border-color:#3add7c;
+}
+
+.card h3{
+    color:#61f09a;
+
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#b9d3c2;
+}
+
+
+/* STATS */
+
+.stats{
+    max-width:1150px;
+
+    margin:-35px auto 0;
+
+    padding:0 20px 50px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+}
+
+.stat{
+    text-align:center;
+
+    background:#0a2015;
+
+    border:1px solid #1a5235;
+
+    border-radius:14px;
+
+    padding:23px;
+}
+
+.stat strong{
+    display:block;
+
+    color:#52ee91;
+
+    font-size:28px;
+}
+
+.stat span{
+    color:#aac5b4;
+
+    font-size:14px;
+}
+
+
+/* INFORMATION BOX */
+
+.info-box{
+    max-width:1000px;
+
+    margin:auto;
+
+    background:#0a1d13;
+
+    border:1px solid #194d32;
+
+    border-radius:18px;
+
+    padding:32px;
+}
+
+.info-box h3{
+    color:#62ef9b;
+
+    margin-top:28px;
+
+    margin-bottom:9px;
+}
+
+.info-box h3:first-child{
+    margin-top:0;
+}
+
+.info-box p{
+    color:#c1d8c8;
+
+    margin-bottom:15px;
+}
+
+
+/* HIGHLIGHT */
+
+.highlight{
+    background:#0d2919;
+
+    border-left:4px solid #45e889;
+
+    padding:19px 21px;
+
+    border-radius:8px;
+
+    margin:23px 0;
+}
+
+
+/* WARNING */
+
+.warning{
+    background:#211e0b;
+
+    border-left:4px solid #e4c857;
+
+    padding:19px 21px;
+
+    border-radius:8px;
+
+    color:#eee0a0;
+
+    margin-top:25px;
+}
+
+
+/* TABLE */
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+.network-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:12px;
+}
+
+.network-table th,
+.network-table td{
+    padding:15px;
+
+    border-bottom:1px solid #19452f;
+
+    text-align:left;
+}
+
+.network-table th{
+    background:#10351f;
+
+    color:#65ef9c;
+}
+
+.network-table td{
+    background:#0a1d13;
+
+    color:#c2d8c8;
+}
+
+
+/* LIST */
+
+.info-list{
+    margin-left:23px;
+
+    color:#c2d8c8;
+}
+
+.info-list li{
+    margin-bottom:8px;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    padding:38px 20px;
+
+    background:#020a06;
+
+    border-top:1px solid #17452d;
+
+    color:#86a893;
+}
+
+footer strong{
+    color:#4ee98e;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .hero{
+        padding:65px 18px;
+    }
+
+    .container{
+        padding:55px 16px;
+    }
+
+    .info-box{
+        padding:23px;
+    }
+
+    .network-table{
+        font-size:14px;
+        min-width:650px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo">
+        AJJRA TECHNO HUB
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="#mstc">MSTC</a>
+
+        <a href="#technology">
+            Technology
+        </a>
+
+        <a href="#network">
+            Network
+        </a>
+
+        <a href="#validator">
+            Validator
+        </a>
+
+        <a href="#staking">
+            Staking
+        </a>
+
+        <a href="#tokenomics">
+            Tokenomics
+        </a>
+
+        <a href="#links">
+            Links
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="badge">
+        MSTC • PUBLIC LAYER 1 • EVM COMPATIBLE
+    </div>
+
+    <h1>
+        MSTC
+    </h1>
+
+    <h2>
+        MST Blockchain
+    </h2>
+
+    <p>
+
+        MST Blockchain ഒരു public,
+        EVM-compatible Layer-1 blockchain network ആണ്.
+
+        MSTC ആണ് network-ന്റെ native asset.
+
+        Fast transactions, low-cost network activity,
+        validators, staking, smart contracts,
+        decentralized applications എന്നിവയ്ക്കായി
+        MST Blockchain infrastructure ഉപയോഗിക്കുന്നു.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+        class="btn btn-primary"
+        href="https://mstblockchain.com/portal/register/VeY52672"
+        target="_blank">
+
+            Register MSTC
+
+        </a>
+
+
+        <a
+        class="btn btn-secondary"
+        href="https://mstscan.com"
+        target="_blank">
+
+            Open MSTScan
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <strong>
+            3s
+        </strong>
+
+        <span>
+            Average Block Time
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            4000+
+        </strong>
+
+        <span>
+            Published TPS
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            0.001
+        </strong>
+
+        <span>
+            Published Average Tx Fee
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            MSTC
+        </strong>
+
+        <span>
+            Native Asset
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MSTC ================= -->
+
+<section
+id="mstc"
+class="container">
+
+    <h2 class="section-title">
+        MSTC എന്താണ്?
+    </h2>
+
+
+    <div class="info-box">
+
+        <h3>
+            🪙 MSTC — Native Asset
+        </h3>
+
+        <p>
+
+            MSTC ആണ് MST Blockchain network-ന്റെ
+            native asset.
+
+            Blockchain network-ലെ transaction fees,
+            staking, validator participation,
+            governance തുടങ്ങിയ protocol-supported
+            activities-ൽ native asset utility ഉണ്ടായേക്കാം.
+
+        </p>
+
+
+        <div class="highlight">
+
+            <strong>
+                MST Blockchain
+            </strong>
+
+            <p>
+                Blockchain Network / Layer-1
+            </p>
+
+
+            <strong>
+                MSTC
+            </strong>
+
+            <p>
+                Native Blockchain Asset
+            </p>
+
+        </div>
+
+
+        <h3>
+            🔗 MSTCയും MST Blockchainയും തമ്മിലുള്ള വ്യത്യാസം
+        </h3>
+
+        <p>
+
+            MST Blockchain ആണ് technology/network.
+
+            MSTC ആ network-ൽ ഉപയോഗിക്കുന്ന native
+            blockchain asset ആണ്.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section
+id="technology"
+class="container dark-section">
+
+    <h2 class="section-title">
+        MSTC Blockchain Technology
+    </h2>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                ⛓ Layer-1 Blockchain
+            </h3>
+
+            <p>
+
+                സ്വന്തം blockchain infrastructure,
+                blocks, transactions, consensus,
+                validators, native asset എന്നിവയുള്ള
+                അടിസ്ഥാന blockchain network ആണ് Layer-1.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                ⚙️ PoSA
+            </h3>
+
+            <p>
+
+                MST Blockchain Proof of Staked Authority
+                (PoSA) consensus mechanism ഉപയോഗിക്കുന്നു.
+
+                Validators network transactions
+                validate ചെയ്യുന്നതിൽ പ്രധാന പങ്ക് വഹിക്കുന്നു.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🧩 EVM Compatible
+            </h3>
+
+            <p>
+
+                Ethereum Virtual Machine-compatible
+                ആയതിനാൽ Solidity smart contracts,
+                MetaMask, Remix, Hardhat തുടങ്ങിയ
+                familiar Web3 tools ഉപയോഗിക്കാം.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🚀 High Throughput
+            </h3>
+
+            <p>
+
+                MST official materials 4000+ TPS
+                എന്ന published figure നൽകുന്നു.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                ⚡ Fast Blocks
+            </h3>
+
+            <p>
+
+                MST official information പ്രകാരം
+                average block time ഏകദേശം 3 seconds ആണ്.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                💸 Low Transaction Cost
+            </h3>
+
+            <p>
+
+                MSTയുടെ published information പ്രകാരം
+                average transaction fee 0.001 MSTC
+                ആയി കാണിക്കുന്നു.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🔐 Network Security
+            </h3>
+
+            <p>
+
+                Validators, consensus,
+                cryptographic verification,
+                distributed nodes എന്നിവ network
+                security-യുടെ പ്രധാന ഭാഗങ്ങളാണ്.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                📜 Smart Contracts
+            </h3>
+
+            <p>
+
+                EVM compatibility വഴി programmable
+                smart contracts deploy ചെയ്യാനും
+                decentralized applications നിർമ്മിക്കാനും കഴിയും.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= NETWORK ================= -->
+
+<section
+id="network"
+class="container">
+
+    <h2 class="section-title">
+        MST Blockchain Network
+    </h2>
+
+
+    <div class="table-wrapper">
+
+    <table class="network-table">
+
+        <tr>
+            <th>
+                Network Property
+            </th>
+
+            <th>
+                Information
+            </th>
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Blockchain
+            </td>
+
+            <td>
+                MST Blockchain
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Type
+            </td>
+
+            <td>
+                Public Layer-1
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Native Asset
+            </td>
+
+            <td>
+                MSTC
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Consensus
+            </td>
+
+            <td>
+                Proof of Staked Authority (PoSA)
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                EVM
+            </td>
+
+            <td>
+                Compatible
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Average Block Time
+            </td>
+
+            <td>
+                Approximately 3 Seconds
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Published TPS
+            </td>
+
+            <td>
+                4000+ TPS
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Published Average Tx Fee
+            </td>
+
+            <td>
+                0.001 MSTC
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Published Validator Figure
+            </td>
+
+            <td>
+                80,000+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Mainnet Explorer
+            </td>
+
+            <td>
+
+                <a
+                href="https://mstscan.com"
+                target="_blank"
+                style="color:#5cf19a;">
+
+                    MSTScan
+
+                </a>
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Testnet Explorer
+            </td>
+
+            <td>
+
+                <a
+                href="https://testnet.mstscan.com"
+                target="_blank"
+                style="color:#5cf19a;">
+
+                    MST Testnet
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= VALIDATOR ================= -->
+
+<section
+id="validator"
+class="container dark-section">
+
+    <h2 class="section-title">
+        MSTC Validator
+    </h2>
+
+
+    <div class="info-box">
+
+
+        <h3>
+            🛡 Validator എന്താണ്?
+        </h3>
+
+        <p>
+
+            MST Blockchain network-ൽ transactions
+            പരിശോധിക്കുകയും blocks validate ചെയ്യുകയും
+            consensus process-ൽ പങ്കെടുക്കുകയും ചെയ്യുന്ന
+            network participant ആണ് Validator.
+
+        </p>
+
+
+
+        <h3>
+            🖥 Full Validator
+        </h3>
+
+        <p>
+
+            MSTയുടെ official information പ്രകാരം full validator
+            ആകാൻ MSTC stake ചെയ്യുകയും ആവശ്യമായ node
+            infrastructure operate ചെയ്യുകയും വേണം.
+
+        </p>
+
+
+
+        <h3>
+            💰 Validator Rewards
+        </h3>
+
+        <p>
+
+            Validator participation-ന് protocol-defined
+            MSTC rewards ലഭിക്കാം.
+
+            Reward amount network rules,
+            validation activity, protocol parameters,
+            staking conditions തുടങ്ങിയവയെ ആശ്രയിച്ചിരിക്കും.
+
+        </p>
+
+
+
+        <h3>
+            🧩 Fractional Validator
+        </h3>
+
+        <p>
+
+            MST official fractional-validator information
+            പ്രകാരം, node-ന്റെ ഒരു fraction സ്വന്തമാക്കി
+            validator rewards-ന്റെ ഒരു share ലഭിക്കുന്ന
+            participation model ഉണ്ട്.
+
+        </p>
+
+
+
+        <h3>
+            📦 Block Rewards
+        </h3>
+
+        <p>
+
+            MSTയുടെ official fractional validator page
+            ഒരു validated block-നുള്ള block reward share
+            വിവരിക്കുന്നു.
+
+            നിലവിലെ reward terms മാറാൻ സാധ്യതയുള്ളതിനാൽ
+            participation-ന് മുമ്പ് official terms പരിശോധിക്കുക.
+
+        </p>
+
+
+
+        <div class="highlight">
+
+            <strong>
+                Validator Reward Concept
+            </strong>
+
+            <p>
+
+                Protocol-defined Rewards
+                → Validator Participation
+                → Reward Distribution
+                → MSTC
+
+            </p>
+
+        </div>
+
+
+
+        <div class="warning">
+
+            <strong>
+                ⚠️ Guaranteed Income അല്ല
+            </strong>
+
+            <p style="margin-top:8px;">
+
+                MST official portal വ്യക്തമാക്കുന്നതുപോലെ
+                validator rewards protocol rules അനുസരിച്ചാണ്
+                ഉണ്ടാകുന്നത്; rewards guaranteed അല്ല.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STAKING ================= -->
+
+<section
+id="staking"
+class="container">
+
+    <h2 class="section-title">
+        MSTC Staking
+    </h2>
+
+
+    <div class="info-box">
+
+        <h3>
+            🔒 Staking എന്താണ്?
+        </h3>
+
+        <p>
+
+            Proof-of-Stake based blockchain systems-ൽ
+            network security/validation process-നെ
+            support ചെയ്യുന്നതിനായി tokens stake ചെയ്യുന്നതാണ്
+            staking.
+
+        </p>
+
+
+        <h3>
+            🪙 MSTC Staking
+        </h3>
+
+        <p>
+
+            MSTയുടെ whitepaper പ്രകാരം native MST coin
+            staking activities-ൽ ഉപയോഗിക്കുന്നു.
+
+        </p>
+
+
+        <h3>
+            💰 Staking Rewards
+        </h3>
+
+        <p>
+
+            Staking rewards ഉണ്ടെങ്കിൽ അവ protocol rules
+            അനുസരിച്ചായിരിക്കും.
+
+            Reward rate fixed income ആയി കാണരുത്.
+
+        </p>
+
+
+        <div class="warning">
+
+            <strong>
+                ശ്രദ്ധിക്കുക
+            </strong>
+
+            <p>
+
+                Staking-ന് reward ലഭിക്കുമെന്നത്
+                guaranteed return എന്നർത്ഥമല്ല.
+
+                Network parameters, token value,
+                validator performance തുടങ്ങിയവ
+                ഫലത്തെ ബാധിക്കാം.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TOKENOMICS ================= -->
+
+<section
+id="tokenomics"
+class="container dark-section">
+
+    <h2 class="section-title">
+        MSTC Tokenomics
+    </h2>
+
+
+    <div class="info-box">
+
+        <h3>
+            🪙 Native Coin Utility
+        </h3>
+
+        <p>
+
+            MST Blockchain whitepaper പ്രകാരം native MST
+            coin transaction fees, staking activities,
+            governance participation എന്നിവയ്ക്കായി
+            ഉപയോഗിക്കുന്നു.
+
+        </p>
+
+
+        <h3>
+            📊 Published Allocation
+        </h3>
+
+        <p>
+
+            MST whitepaper-ൽ നൽകിയ token allocation
+            breakdown താഴെപ്പറയുന്നതാണ്:
+
+        </p>
+
+
+        <ul class="info-list">
+
+            <li>
+                <strong>30%</strong> — Validation Rewards
+            </li>
+
+            <li>
+                <strong>25%</strong> — Liquidity for Transactions
+            </li>
+
+            <li>
+                <strong>17.5%</strong> — Ecosystem Development
+            </li>
+
+            <li>
+                <strong>12.5%</strong> — Marketing & Promotion
+            </li>
+
+            <li>
+                <strong>10%</strong> — Emergency Reserve
+            </li>
+
+            <li>
+                <strong>5%</strong> — Team & Advisors
+            </li>
+
+        </ul>
+
+
+        <div class="warning">
+
+            <strong>
+                Tokenomics Note
+            </strong>
+
+            <p>
+
+                മുകളിലെ allocation MST whitepaper-ൽ
+                പ്രസിദ്ധീകരിച്ച വിവരമാണ്.
+
+                Protocol updates ഉണ്ടായാൽ നിലവിലെ
+                information മാറിയേക്കാം.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MSTC USE ================= -->
+
+<section
+class="container">
+
+    <h2 class="section-title">
+        MSTC ഉപയോഗങ്ങൾ
+    </h2>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                ⛽ Transaction Fees
+            </h3>
+
+            <p>
+
+                MST Blockchain network-ലെ
+                transactions-ന് ബാധകമായ network fee
+                അടയ്ക്കുന്നതിനായി MSTC ഉപയോഗിക്കാം.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🔒 Staking
+            </h3>
+
+            <p>
+
+                Protocol-supported staking mechanisms-ൽ
+                MSTC ഉപയോഗിക്കാം.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🛡 Validation
+            </h3>
+
+            <p>
+
+                Validator participation-നും network
+                security mechanism-നും MSTC stake
+                ആവശ്യമായേക്കാം.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🗳 Governance
+            </h3>
+
+            <p>
+
+                MST whitepaper പ്രകാരം native coin
+                governance participation-ലും ഉപയോഗിക്കുന്നു.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                📜 Smart Contracts
+            </h3>
+
+            <p>
+
+                EVM-compatible MST Blockchain-ൽ
+                smart-contract ecosystem-ുമായി
+                MSTC network asset ആയി ഉപയോഗിക്കാം.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🌐 Network Economy
+            </h3>
+
+            <p>
+
+                Blockchain network-ന്റെ economic
+                activity-യിലെ native asset ആയി MSTC
+                പ്രവർത്തിക്കുന്നു.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MAINNET TESTNET ================= -->
+
+<section class="container dark-section">
+
+    <h2 class="section-title">
+        MST Mainnet & Testnet
+    </h2>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                🟢 Mainnet
+            </h3>
+
+            <p>
+
+                MSTയുടെ live blockchain network ആണ്
+                Mainnet.
+
+                Real network transactions,
+                contracts, balances, blocks തുടങ്ങിയവ
+                ഇവിടെ പരിശോധിക്കാം.
+
+            </p>
+
+            <br>
+
+            <a
+            class="btn btn-secondary"
+            href="https://mstscan.com"
+            target="_blank">
+
+                Open Mainnet Explorer
+
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🧪 Testnet
+            </h3>
+
+            <p>
+
+                Applications, smart contracts,
+                transactions എന്നിവ testing ചെയ്യാൻ
+                ഉപയോഗിക്കുന്ന environment ആണ് Testnet.
+
+            </p>
+
+            <br>
+
+            <a
+            class="btn btn-secondary"
+            href="https://testnet.mstscan.com"
+            target="_blank">
+
+                Open Testnet Explorer
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EXPLORER ================= -->
+
+<section class="container">
+
+    <h2 class="section-title">
+        MSTScan Explorer
+    </h2>
+
+
+    <div class="info-box">
+
+        <h3>
+            🔎 Blockchain Explorer
+        </h3>
+
+        <p>
+
+            MSTScan ഉപയോഗിച്ച് MST Blockchain-ലെ
+            blocks, transactions, addresses, contracts,
+            balances തുടങ്ങിയ public blockchain data
+            പരിശോധിക്കാം.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+            class="btn btn-primary"
+            href="https://mstscan.com"
+            target="_blank">
+
+                Open MSTScan
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BLOCKCHAIN WORKING ================= -->
+
+<section class="container dark-section">
+
+    <h2 class="section-title">
+        MSTC Blockchain എങ്ങനെ പ്രവർത്തിക്കുന്നു?
+    </h2>
+
+
+    <div class="info-box">
+
+        <h3>
+            1️⃣ Transaction
+        </h3>
+
+        <p>
+
+            User blockchain wallet ഉപയോഗിച്ച്
+            transaction ആരംഭിക്കുന്നു.
+
+        </p>
+
+
+        <h3>
+            2️⃣ Network
+        </h3>
+
+        <p>
+
+            Transaction MST Blockchain network-ലേക്ക്
+            എത്തുന്നു.
+
+        </p>
+
+
+        <h3>
+            3️⃣ Validation
+        </h3>
+
+        <p>
+
+            Network validators transaction
+            പരിശോധിക്കുന്നു.
+
+        </p>
+
+
+        <h3>
+            4️⃣ Consensus
+        </h3>
+
+        <p>
+
+            Consensus mechanism വഴി network
+            transaction/block validity-യിൽ agreement
+            നേടുന്നു.
+
+        </p>
+
+
+        <h3>
+            5️⃣ Block
+        </h3>
+
+        <p>
+
+            Valid transactions blockchain block-ൽ
+            ഉൾപ്പെടുത്തുന്നു.
+
+        </p>
+
+
+        <h3>
+            6️⃣ Confirmation
+        </h3>
+
+        <p>
+
+            Block network-ൽ അംഗീകരിക്കപ്പെട്ട ശേഷം
+            transaction blockchain ledger-ൽ രേഖപ്പെടുന്നു.
+
+        </p>
+
+
+        <div class="highlight">
+
+            <strong>
+
+                Wallet → Transaction → Validators
+                → Consensus → Block → Blockchain
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= NETWORK FEATURES ================= -->
+
+<section class="container">
+
+    <h2 class="section-title">
+        MSTC Blockchain പ്രധാന സവിശേഷതകൾ
+    </h2>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                ⚡ Speed
+            </h3>
+
+            <p>
+                Published network information പ്രകാരം
+                4000+ TPS വരെ throughput figure.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                ⏱ Fast Blocks
+            </h3>
+
+            <p>
+                Approximately 3-second average block time.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                💸 Low Fees
+            </h3>
+
+            <p>
+                Published average transaction fee
+                0.001 MSTC.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🧩 EVM
+            </h3>
+
+            <p>
+                Ethereum Virtual Machine compatibility.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🛡 Validators
+            </h3>
+
+            <p>
+                Distributed validator infrastructure
+                network security-നെ support ചെയ്യുന്നു.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🌐 Public Layer-1
+            </h3>
+
+            <p>
+                Dedicated public Layer-1 blockchain network.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= REGISTRATION ================= -->
+
+<section class="container dark-section">
+
+    <h2 class="section-title">
+        Join MST Blockchain
+    </h2>
+
+
+    <div class="info-box">
+
+        <h3>
+            🚀 MSTC Registration
+        </h3>
+
+        <p>
+
+            MST Blockchain portal-ൽ account registration
+            നടത്താൻ താഴെയുള്ള link ഉപയോഗിക്കാം.
+
+        </p>
+
+
+        <div class="highlight">
+
+            <strong>
+                Registration / Referral Link
+            </strong>
+
+            <p style="word-break:break-all;">
+
+                https://mstblockchain.com/portal/register/VeY52672
+
+            </p>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+            class="btn btn-primary"
+            href="https://mstblockchain.com/portal/register/VeY52672"
+            target="_blank">
+
+                Register on MST Portal
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= OFFICIAL LINKS ================= -->
+
+<section
+id="links"
+class="container">
+
+    <h2 class="section-title">
+        MSTC Official Links
+    </h2>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                🌐 MST Blockchain
+            </h3>
+
+            <p>
+                Official MST Blockchain platform.
+            </p>
+
+            <br>
+
+            <a
+            class="btn btn-secondary"
+            href="https://mstblockchain.com"
+            target="_blank">
+
+                Open MST Blockchain
+
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🔎 MSTScan
+            </h3>
+
+            <p>
+                MST Mainnet blockchain explorer.
+            </p>
+
+            <br>
+
+            <a
+            class="btn btn-secondary"
+            href="https://mstscan.com"
+            target="_blank">
+
+                Open MSTScan
+
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                🧪 Testnet Explorer
+            </h3>
+
+            <p>
+                MST Testnet blockchain explorer.
+            </p>
+
+            <br>
+
+            <a
+            class="btn btn-secondary"
+            href="https://testnet.mstscan.com"
+            target="_blank">
+
+                Open Testnet
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>
+            AJJRA TECHNO HUB
+        </strong>
+    </p>
+
+    <p>
+        MSTC • MST Blockchain
+    </p>
+
+    <p style="margin-top:10px;font-size:13px;">
+
+        MSTC Blockchain information is provided for
+        educational and informational purposes.
+
+        Network parameters, fees, rewards, staking rules,
+        validator conditions and tokenomics may change
+        according to protocol updates.
+
+    </p>
+
+</footer>
+
+
+</body>
+</html>
