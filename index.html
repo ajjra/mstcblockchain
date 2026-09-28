@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>AJJRA TECHNO HUB | MSTC Blockchain</title>
+
+<meta name="description"
+content="AJJRA TECHNO HUB MSTC Blockchain Mainnet and Testnet live statistics, blocks, transactions, contracts, verified contracts and tokens.">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#06110b;
+  color:#eaffef;
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(3,15,9,.97);
+  border-bottom:1px solid #163c25;
+  backdrop-filter:blur(12px);
+}
+
+.nav{
+  max-width:1250px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:21px;
+  font-weight:800;
+  color:#65ff9a;
+  white-space:nowrap;
+}
+
+.logo span{
+  color:#fff;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:#b9d8c3;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#67ff9a;
+}
+
+.container{
+  max-width:1250px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.hero{
+  min-height:510px;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 20%,rgba(22,255,108,.14),transparent 35%),
+    linear-gradient(180deg,#071a0e,#06110b);
+}
+
+.hero-content{
+  width:100%;
+}
+
+.badge{
+  display:inline-block;
+  padding:7px 15px;
+  border:1px solid #23653a;
+  border-radius:30px;
+  color:#70ffa0;
+  background:#0a2112;
+  margin-bottom:18px;
+  font-size:13px;
+}
+
+h1{
+  font-size:clamp(38px,7vw,75px);
+  line-height:1.05;
+  margin-bottom:18px;
+}
+
+.gradient{
+  color:#68ff9b;
+}
+
+.hero p{
+  max-width:800px;
+  margin:auto;
+  color:#b9cfc0;
+  font-size:18px;
+}
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:9px;
+  border:1px solid #2d8148;
+  background:#0d2c17;
+  color:#8cffad;
+  font-weight:700;
+  transition:.2s;
+}
+
+.btn.primary{
+  background:#36d86b;
+  color:#041108;
+  border-color:#36d86b;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+section{
+  padding:75px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title h2{
+  font-size:35px;
+  margin-bottom:8px;
+}
+
+.section-title p{
+  color:#9bb5a2;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#0a1b10;
+  border:1px solid #183b25;
+  border-radius:15px;
+  padding:22px;
+}
+
+.card h3{
+  color:#6dff9e;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#a8bbaa;
+}
+
+.search-box{
+  background:#08170d;
+  border:1px solid #1c472b;
+  border-radius:18px;
+  padding:25px;
+}
+
+.search-controls{
+  display:grid;
+  grid-template-columns:180px 1fr 120px;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+input,
+select,
+button{
+  width:100%;
+  padding:13px 14px;
+  border-radius:9px;
+  border:1px solid #285638;
+  background:#06110b;
+  color:#effff3;
+  outline:none;
+}
+
+input:focus,
+select:focus{
+  border-color:#5cff91;
+}
+
+button{
+  cursor:pointer;
+  background:#31cf63;
+  color:#041008;
+  font-weight:800;
+}
+
+.network-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin:20px 0;
+  padding:18px;
+  border-radius:12px;
+  background:#0d2414;
+  border:1px solid #205333;
+}
+
+.network-name{
+  font-size:22px;
+  font-weight:800;
+}
+
+.live{
+  color:#63ff97;
+  font-size:13px;
+}
+
+.live-dot{
+  display:inline-block;
+  width:9px;
+  height:9px;
+  background:#45ef7d;
+  border-radius:50%;
+  margin-right:6px;
+  box-shadow:0 0 10px #45ef7d;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:14px;
+  margin-top:20px;
+}
+
+.stat{
+  padding:18px;
+  border-radius:13px;
+  background:#0b2012;
+  border:1px solid #1b4729;
+  min-height:105px;
+}
+
+.stat.highlight{
+  border-color:#3edb71;
+  box-shadow:0 0 15px rgba(62,219,113,.08);
+}
+
+.stat-label{
+  color:#8da895;
+  font-size:13px;
+  margin-bottom:8px;
+}
+
+.stat-value{
+  color:#73ffa0;
+  font-size:23px;
+  font-weight:800;
+  word-break:break-word;
+}
+
+.sub-title{
+  margin:35px 0 15px;
+  font-size:22px;
+  color:#73ffa0;
+}
+
+.details-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+}
+
+.detail{
+  background:#09180e;
+  border:1px solid #183d25;
+  padding:14px;
+  border-radius:10px;
+}
+
+.detail strong{
+  display:block;
+  color:#73ff9e;
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.detail span{
+  color:#c8d8cc;
+  word-break:break-word;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  border:1px solid #193f27;
+  border-radius:12px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:700px;
+}
+
+th,
+td{
+  padding:12px;
+  text-align:left;
+  border-bottom:1px solid #173723;
+  font-size:13px;
+}
+
+th{
+  color:#70ff9d;
+  background:#0c2113;
+}
+
+td{
+  color:#b8cbbb;
+}
+
+.hash{
+  color:#67ff99;
+  word-break:break-all;
+}
+
+.status{
+  margin-top:15px;
+  padding:13px;
+  border-radius:9px;
+  background:#0b2113;
+  color:#9bb5a2;
+  border:1px solid #193e26;
+}
+
+.status.error{
+  color:#ff9999;
+  border-color:#6d2525;
+  background:#241010;
+}
+
+.status.success{
+  color:#75ffa0;
+}
+
+.status.loading{
+  opacity:.7;
+}
+
+.counter-source{
+  margin-top:10px;
+  color:#75967f;
+  font-size:11px;
+}
+
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.resource{
+  display:block;
+  padding:20px;
+  border:1px solid #1d4729;
+  border-radius:14px;
+  background:#0a1b10;
+  transition:.2s;
+}
+
+.resource:hover{
+  border-color:#53ec85;
+  transform:translateY(-2px);
+}
+
+.resource h3{
+  color:#6eff9d;
+  margin-bottom:6px;
+}
+
+.resource p{
+  color:#9eb5a5;
+}
+
+footer{
+  border-top:1px solid #163923;
+  padding:30px 20px;
+  text-align:center;
+  color:#789180;
+}
+
+@media(max-width:750px){
+
+  .nav{
+    flex-direction:column;
+  }
+
+  nav{
+    justify-content:center;
+  }
+
+  .search-controls{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:450px;
+  }
+
+  section{
+    padding:55px 0;
+  }
+
+  .network-head{
+    flex-direction:column;
+    align-items:stretch;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      AJJRA <span>TECHNO HUB</span>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#search">Search</a>
+      <a href="#resources">Resources</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#usecases">Use Cases</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+  <div class="container hero-content">
+
+    <div class="badge">
+      MSTC BLOCKCHAIN • EVM • LAYER 1
+    </div>
+
+    <h1>
+      AJJRA
+      <span class="gradient">TECHNO HUB</span>
+    </h1>
+
+    <p>
+      MSTC Blockchain Mainnet & Testnet information,
+      live network statistics, blocks, transactions,
+      contracts, verified contracts and token data.
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn primary"
+         href="https://mstscan.com"
+         target="_blank">
+        Mainnet Explorer
+      </a>
+
+      <a class="btn"
+         href="https://testnet.mstscan.com"
+         target="_blank">
+        Testnet Explorer
+      </a>
+
+      <a class="btn"
+         href="https://mstblockchain.com"
+         target="_blank">
+        Official MST Website
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>About MSTC Blockchain</h2>
+
+      <p>
+        MSTC Blockchain network overview
+      </p>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Layer 1</h3>
+        <p>
+          MSTC operates as an EVM-compatible
+          Layer 1 blockchain.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>EVM</h3>
+        <p>
+          Ethereum Virtual Machine compatible
+          environment for smart contracts and Web3.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Native Coin</h3>
+        <p>
+          Mainnet: MSTC<br>
+          Testnet: tMSTC
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Block Time</h3>
+        <p>
+          Current explorer statistics indicate
+          approximately 3 seconds average block time.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section id="search">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>🔎 MSTC Blockchain Search</h2>
+
+      <p>
+        Full Mainnet / Testnet information and live statistics
+      </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+
+      <!-- SEARCH CONTROLS -->
+
+      <div class="search-controls">
+
+        <select id="networkSelect">
+
+          <option value="mainnet">
+            MST Mainnet
+          </option>
+
+          <option value="testnet">
+            MST Testnet
+          </option>
+
+        </select>
+
+
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Address / Transaction Hash / Block / Token"
+        >
+
+
+        <button
+          id="searchButton"
+          type="button">
+          Search
+        </button>
+
+      </div>
+
+
+      <!-- NETWORK HEADER -->
+
+      <div class="network-head">
+
+        <div>
+
+          <div
+            class="network-name"
+            id="networkName">
+            MST Mainnet
+          </div>
+
+          <div
+            id="networkStatus"
+            class="live">
+
+            <span class="live-dot"></span>
+            Connecting...
+
+          </div>
+
+        </div>
+
+
+        <button
+          id="refreshButton"
+          type="button"
+          style="max-width:130px">
+
+          ↻ Refresh
+
+        </button>
+
+      </div>
+
+
+      <!-- =================================================
+           LIVE STATISTICS
+      ================================================== -->
+
+      <h3 class="sub-title">
+        📊 Live Blockchain Statistics
+      </h3>
+
+
+      <div class="stats-grid">
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Average Block Time
+          </div>
+
+          <div
+            class="stat-value"
+            id="averageBlockTime">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Total Blocks
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalBlocks">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Total Transactions
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalTransactions">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Completed Transactions
+          </div>
+
+          <div
+            class="stat-value"
+            id="completedTransactions">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Total Addresses
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalAddresses">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Total Accounts
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalAccounts">
+            —
+          </div>
+
+        </div>
+
+
+        <!-- DEPLOYED CONTRACTS -->
+
+        <div class="stat highlight">
+
+          <div class="stat-label">
+            Deployed Contracts
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalContracts">
+            —
+          </div>
+
+          <div
+            class="counter-source"
+            id="contractSource">
+            Live counter
+          </div>
+
+        </div>
+
+
+        <!-- VERIFIED CONTRACTS -->
+
+        <div class="stat highlight">
+
+          <div class="stat-label">
+            Verified Contracts
+          </div>
+
+          <div
+            class="stat-value"
+            id="verifiedContracts">
+            —
+          </div>
+
+          <div
+            class="counter-source"
+            id="verifiedSource">
+            Live counter
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Total Tokens
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalTokens">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            24h Transactions
+          </div>
+
+          <div
+            class="stat-value"
+            id="tx24h">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Pending Transactions
+          </div>
+
+          <div
+            class="stat-value"
+            id="pendingTx">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            24h Fees
+          </div>
+
+          <div
+            class="stat-value"
+            id="fees24h">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Average Tx Fee
+          </div>
+
+          <div
+            class="stat-value"
+            id="avgFee">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            MSTC Transfers
+          </div>
+
+          <div
+            class="stat-value"
+            id="coinTransfers">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Contracts Today
+          </div>
+
+          <div
+            class="stat-value"
+            id="contractsToday">
+            —
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-label">
+            Verified Contracts Today
+          </div>
+
+          <div
+            class="stat-value"
+            id="verifiedToday">
+            —
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="apiStatus"
+        class="status">
+
+        Connecting to MSTScan API...
+
+      </div>
+
+
+      <!-- =================================================
+           NETWORK CONFIGURATION
+      ================================================== -->
+
+      <h3 class="sub-title">
+        🌐 Full Network Configuration
+      </h3>
+
+
+      <div class="details-grid">
+
+
+        <div class="detail">
+          <strong>Network</strong>
+          <span id="detailNetwork">—</span>
+        </div>
+
+
+        <div class="detail">
+          <strong>Chain ID</strong>
+          <span id="detailChainId">—</span>
+        </div>
+
+
+        <div class="detail">
+          <strong>Native Coin</strong>
+          <span id="detailSymbol">—</span>
+        </div>
+
+
+        <div class="detail">
+          <strong>Decimals</strong>
+          <span>18</span>
+        </div>
+
+
+        <div class="detail">
+          <strong>RPC URL</strong>
+          <span id="detailRpc">—</span>
+        </div>
+
+
+        <div class="detail">
+          <strong>Explorer</strong>
+          <span id="detailExplorer">—</span>
+        </div>
+
+
+        <div class="detail">
+          <strong>API</strong>
+          <span id="detailApi">—</span>
+        </div>
+
+
+        <div class="detail">
+          <strong>Compatibility</strong>
+          <span>EVM</span>
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           LATEST BLOCKS
+      ================================================== -->
+
+      <h3 class="sub-title">
+        🧱 Latest Blocks
+      </h3>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Block</th>
+              <th>Timestamp</th>
+              <th>Transactions</th>
+              <th>Validator</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="blocksTable">
+
+            <tr>
+              <td colspan="4">
+                Loading...
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <!-- =================================================
+           LATEST TRANSACTIONS
+      ================================================== -->
+
+      <h3 class="sub-title">
+        🔄 Latest Transactions
+      </h3>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Transaction</th>
+              <th>Block</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Value</th>
+              <th>Status</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="transactionsTable">
+
+            <tr>
+              <td colspan="6">
+                Loading...
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <!-- =================================================
+           TOKEN TRANSFERS
+      ================================================== -->
+
+      <h3 class="sub-title">
+        🪙 Latest Token Transfers
+      </h3>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Transaction</th>
+              <th>Token</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Amount</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="tokenTransfersTable">
+
+            <tr>
+              <td colspan="5">
+                Loading...
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <!-- =================================================
+           INTERNAL TRANSACTIONS
+      ================================================== -->
+
+      <h3 class="sub-title">
+        ⚙️ Latest Internal Transactions
+      </h3>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
