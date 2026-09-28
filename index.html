@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AJJRA TECHNO HUB | MSTC Blockchain</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#07111f;
+  color:#fff;
+}
+
+.container{
+  width:94%;
+  max-width:1100px;
+  margin:auto;
+}
+
+header{
+  padding:35px 10px 25px;
+  text-align:center;
+}
+
+.logo{
+  font-size:32px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.subtitle{
+  margin-top:8px;
+  color:#9fb1c7;
+  font-size:15px;
+}
+
+.network{
+  margin:20px auto;
+  max-width:500px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.network button,
+.action-btn{
+  border:0;
+  border-radius:10px;
+  padding:13px 20px;
+  cursor:pointer;
+  font-weight:bold;
+  color:white;
+  background:#163252;
+}
+
+.network button.active{
+  background:#1473e6;
+}
+
+.info{
+  background:#0d1b2d;
+  border:1px solid #203650;
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:25px;
+}
+
+.info h2{
+  margin-top:0;
+  font-size:24px;
+}
+
+.info p{
+  color:#b8c7d9;
+  line-height:1.7;
+}
+
+.network-info{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+  margin-top:20px;
+}
+
+.info-item{
+  background:#091625;
+  padding:15px;
+  border-radius:12px;
+}
+
+.info-item span{
+  display:block;
+  color:#91a5bb;
+  font-size:12px;
+  margin-bottom:6px;
+}
+
+.info-item strong{
+  font-size:15px;
+}
+
+.stats-title{
+  text-align:center;
+  margin:35px 0 20px;
+  font-size:25px;
+}
+
+.status{
+  text-align:center;
+  color:#8fa4bb;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#0d1b2d;
+  border:1px solid #203650;
+  border-radius:16px;
+  padding:20px;
+  min-height:115px;
+}
+
+.card-title{
+  color:#9eb0c4;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.value{
+  font-size:28px;
+  font-weight:800;
+  word-break:break-word;
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:35px 0;
+}
+
+.register{
+  background:#1473e6;
+}
+
+.explorer{
+  background:#163252;
+}
+
+footer{
+  text-align:center;
+  padding:30px 10px;
+  color:#71859c;
+  font-size:13px;
+}
+
+a{
+  text-decoration:none;
+}
+
+@media(max-width:500px){
+  .logo{
+    font-size:26px;
+  }
+
+  .value{
+    font-size:25px;
+  }
+
+  .card{
+    min-height:105px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="logo">AJJRA TECHNO HUB</div>
+  <div class="subtitle">
+    Blockchain • AI • Automation • Web3 Technology
+  </div>
+</header>
+
+<!-- NETWORK SELECTOR -->
+<div class="network">
+  <button id="mainBtn" class="active" onclick="selectNetwork('mainnet')">
+    MSTC MAINNET
+  </button>
+
+  <button id="testBtn" onclick="selectNetwork('testnet')">
+    MSTC TESTNET
+  </button>
+</div>
+
+<!-- MSTC INFORMATION -->
+<section class="info">
+
+  <h2>MSTC Blockchain</h2>
+
+  <p>
+    MSTC is an EVM-compatible blockchain network designed to support
+    decentralized applications, smart contracts, tokens and Web3
+    applications.
+  </p>
+
+  <div class="network-info">
+
+    <div class="info-item">
+      <span>Network</span>
+      <strong id="networkName">MSTC Mainnet</strong>
+    </div>
+
+    <div class="info-item">
+      <span>Native Coin</span>
+      <strong id="nativeCoin">MSTC</strong>
+    </div>
+
+    <div class="info-item">
+      <span>EVM</span>
+      <strong>Compatible</strong>
+    </div>
+
+    <div class="info-item">
+      <span>Consensus</span>
+      <strong>Parlia</strong>
+    </div>
+
+    <div class="info-item">
+      <span>Block Time</span>
+      <strong>~3 Seconds</strong>
+    </div>
+
+    <div class="info-item">
+      <span>Smart Contracts</span>
+      <strong>Supported</strong>
+    </div>
+
+    <div class="info-item">
+      <span>Token Standards</span>
+      <strong>MEP-20 / MEP-721</strong>
+    </div>
+
+    <div class="info-item">
+      <span>Chain ID</span>
+      <strong id="chainId">4646</strong>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+<h2 class="stats-title">MSTC Network Statistics</h2>
+
+<div class="status" id="status">
+  MSTScan statistics snapshot • Auto-update when API is available
+</div>
+
+<div class="stats">
+
+  <div class="card">
+    <div class="card-title">Total Blocks</div>
+    <div class="value" id="totalBlocks">20.178M</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Total Transactions</div>
+    <div class="value" id="totalTransactions">5.242M</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Completed Transactions</div>
+    <div class="value" id="completedTransactions">5.201M</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Total Addresses</div>
+    <div class="value" id="totalAddresses">189.66K</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Total Accounts</div>
+    <div class="value" id="totalAccounts">34.155K</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Deployed Contracts</div>
+    <div class="value" id="deployedContracts">437</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Verified Contracts</div>
+    <div class="value" id="verifiedContracts">193</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Total Tokens</div>
+    <div class="value" id="totalTokens">47</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Transactions 24h</div>
+    <div class="value" id="transactions24h">10.367K</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Pending Transactions</div>
+    <div class="value" id="pendingTransactions">47</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">MSTC Transfers</div>
+    <div class="value" id="mstcTransfers">959.061K</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Contracts Today</div>
+    <div class="value" id="contractsToday">0</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Verified Contracts Today</div>
+    <div class="value" id="verifiedContractsToday">0</div>
+  </div>
+
+</div>
+
+
+<!-- BUTTONS -->
+<div class="actions">
+
+  <a
+    class="action-btn register"
+    href="https://mstblockchain.com/portal/register/VeY52672"
+    target="_blank"
+    rel="noopener noreferrer">
+    Register on MSTC
+  </a>
+
+  <a
+    class="action-btn explorer"
+    id="explorerBtn"
+    href="https://mstscan.com"
+    target="_blank"
+    rel="noopener noreferrer">
+    Open MSTScan
+  </a>
+
+</div>
+
+
+<footer>
+  © 2026 AJJRA TECHNO HUB<br>
+  MSTC Blockchain Information & Network Statistics
+</footer>
+
+</div>
+
+
+<script>
+
+/* --------------------------------
+   MSTC SNAPSHOT VALUES
+-------------------------------- */
+
+const SNAPSHOTS = {
+
+  mainnet: {
+
+    totalBlocks: "20.178M",
+    totalTransactions: "5.242M",
+    completedTransactions: "5.201M",
+    totalAddresses: "189.66K",
+    totalAccounts: "34.155K",
+    deployedContracts: "437",
+    verifiedContracts: "193",
+    totalTokens: "47",
+    transactions24h: "10.367K",
+    pendingTransactions: "47",
+    mstcTransfers: "959.061K",
+    contractsToday: "0",
+    verifiedContractsToday: "0"
+
+  },
+
+  testnet: {
+
+    totalBlocks: "5.041M",
+    totalTransactions: "101.572K",
+    completedTransactions: "101.026K",
+    totalAddresses: "5.799K",
+    totalAccounts: "997",
+    deployedContracts: "3.311K",
+    verifiedContracts: "585",
+    totalTokens: "309",
+    transactions24h: "9.308K",
+    pendingTransactions: "4",
+    mstcTransfers: "2.54K",
+    contractsToday: "0",
+    verifiedContractsToday: "1"
+
+  }
+
+};
+
+
+/* --------------------------------
+   NETWORK CONFIG
+-------------------------------- */
+
+const NETWORKS = {
+
+  mainnet: {
+    name: "MSTC Mainnet",
+    coin: "MSTC",
+    chainId: "4646",
+    explorer: "https://mstscan.com",
+    api: "https://mstscan.com/api/v2"
+  },
+
+  testnet: {
+    name: "MSTC Testnet",
+    coin: "tMSTC",
+    chainId: "91562037",
+    explorer: "https://testnet.mstscan.com",
+    api: "https://testnet.mstscan.com/api/v2"
+  }
+
+};
+
+
+let currentNetwork = "mainnet";
+
+
+/* --------------------------------
+   SHOW SNAPSHOT
+-------------------------------- */
+
+function showSnapshot(network){
+
+  const data = SNAPSHOTS[network];
+
+  for(const key in data){
+
+    const element = document.getElementById(key);
+
+    if(element){
+      element.textContent = data[key];
+    }
+
+  }
+
+}
+
+
+/* --------------------------------
+   CHANGE NETWORK
+-------------------------------- */
+
+function selectNetwork(network){
+
+  currentNetwork = network;
+
+  const config = NETWORKS[network];
+
+  document.getElementById("networkName").textContent =
+    config.name;
+
+  document.getElementById("nativeCoin").textContent =
+    config.coin;
+
+  document.getElementById("chainId").textContent =
+    config.chainId;
+
+  document.getElementById("explorerBtn").href =
+    config.explorer;
+
+  document.getElementById("mainBtn")
+    .classList.toggle("active", network === "mainnet");
+
+  document.getElementById("testBtn")
+    .classList.toggle("active", network === "testnet");
+
+  showSnapshot(network);
+
+  document.getElementById("status").textContent =
+    config.name +
+    " • MSTScan statistics snapshot • Checking API...";
+
+  refreshLive(network);
+}
+
+
+/* --------------------------------
+   SAFE NUMBER FORMAT
+-------------------------------- */
+
+function formatNumber(value){
+
+  if(value === null || value === undefined)
+    return null;
+
+  if(typeof value === "object"){
+
+    if(value.value !== undefined)
+      value = value.value;
+
+    else if(value.count !== undefined)
+      value = value.count;
+
+    else if(value.total !== undefined)
+      value = value.total;
+
+  }
+
+  if(typeof value === "string" && value.trim() === "")
+    return null;
+
+  return String(value);
+
+}
+
+
+/* --------------------------------
+   GET VALUE FROM POSSIBLE API KEYS
+-------------------------------- */
+
+function findValue(obj, keys){
+
+  for(const key of keys){
+
+    if(obj && obj[key] !== undefined){
+
+      const value = formatNumber(obj[key]);
+
+      if(value !== null)
+        return value;
+
+    }
+
+  }
+
+  return null;
+}
+
+
+/* --------------------------------
+   LIVE API UPDATE
+-------------------------------- */
+
+async function refreshLive(network){
+
+  const config = NETWORKS[network];
+
+  try{
+
+    const response = await fetch(
+      config.api + "/stats",
+      {
+        method:"GET",
+        headers:{
+          "Accept":"application/json"
+        },
+        cache:"no-store"
+      }
+    );
+
+    if(!response.ok)
+      throw new Error("API unavailable");
+
+    const data = await response.json();
+
+    const root =
+      data && data.data
+      ? data.data
+      : data;
+
+    const mapping = {
+
+      totalBlocks:[
+        "total_blocks",
+        "totalBlocks",
+        "blocks"
+      ],
+
+      totalTransactions:[
+        "total_transactions",
+        "totalTransactions",
+        "transactions"
+      ],
+
+      completedTransactions:[
+        "completed_transactions",
+        "completedTransactions"
+      ],
+
+      totalAddresses:[
+        "total_addresses",
+        "totalAddresses",
+        "addresses"
+      ],
+
+      totalAccounts:[
+        "total_accounts",
+        "totalAccounts",
+        "accounts"
+      ],
+
+      deployedContracts:[
+        "total_contracts",
+        "totalContracts",
+        "deployed_contracts",
+        "deployedContracts"
+      ],
+
+      totalTokens:[
+        "total_tokens",
+        "totalTokens",
+        "tokens"
+      ],
+
+      transactions24h:[
+        "transactions_24h",
+        "transactions24h",
+        "transactions_today"
+      ],
+
+      pendingTransactions:[
+        "pending_transactions",
+        "pendingTransactions"
+      ],
+
+      mstcTransfers:[
+        "mstc_transfers",
+        "mstcTransfers",
+        "coin_transfers"
+      ],
+
+      contractsToday:[
+        "contracts_today",
+        "contractsToday"
+      ],
+
+      verifiedContractsToday:[
+        "verified_contracts_today",
+        "verifiedContractsToday"
+      ]
+
+    };
+
+
+    for(const field in mapping){
+
+      const value =
+        findValue(root,mapping[field]);
+
+      if(value !== null){
+
+        const element =
+          document.getElementById(field);
+
+        if(element)
+          element.textContent = value;
+
+      }
+
+    }
+
+
+    /*
+       Verified contract counter may be
+       available from a separate endpoint.
+    */
+
+    try{
+
+      const verifyResponse =
+        await fetch(
+          config.api + "/smart-contracts/counters",
+          {
+            method:"GET",
+            headers:{
+              "Accept":"application/json"
+            },
+            cache:"no-store"
+          }
+        );
+
+      if(verifyResponse.ok){
+
+        const verifyData =
+          await verifyResponse.json();
+
+        const verifyRoot =
+          verifyData && verifyData.data
+          ? verifyData.data
+          : verifyData;
+
+        const verified =
+          findValue(
+            verifyRoot,
+            [
+              "verified_contracts",
+              "verifiedContracts",
+              "verified"
+            ]
+          );
+
+        if(verified !== null){
+
+          document.getElementById(
+            "verifiedContracts"
+          ).textContent = verified;
+
+        }
+
+      }
+
+    }catch(e){
+      /*
+        Keep snapshot value.
+      */
+    }
+
+
+    document.getElementById("status").textContent =
+      config.name +
+      " • Statistics loaded / snapshot fallback available";
+
+  }catch(error){
+
+    /*
+      IMPORTANT:
+      Do NOT replace values with —
+      if API fails.
+    */
+
+    document.getElementById("status").textContent =
+      config.name +
+      " • MSTScan snapshot values • API update unavailable";
+
+  }
+
+}
+
+
+/* --------------------------------
+   INITIAL LOAD
+-------------------------------- */
+
+selectNetwork("mainnet");
+
+
+/* --------------------------------
+   AUTO REFRESH
+-------------------------------- */
+
+setInterval(function(){
+
+  refreshLive(currentNetwork);
+
+},15000);
+
+</script>
+
+</body>
+</html>
