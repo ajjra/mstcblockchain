@@ -1,0 +1,4046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+AJJRA TECHNO HUB | MSTC Blockchain Live
+</title>
+
+<meta
+    name="description"
+    content="AJJRA TECHNO HUB MST Blockchain Mainnet and Testnet live information portal."
+>
+
+<meta
+    name="keywords"
+    content="MST Blockchain, MSTC, MST Mainnet, MST Testnet, MSTScan, Web3, EVM, PoSA"
+>
+
+<meta
+    name="author"
+    content="AJJRA TECHNO HUB"
+>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#050b13;
+
+    color:#ffffff;
+
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+.container{
+
+    width:94%;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:
+        rgba(5,11,19,.96);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid #1d344a;
+}
+
+.nav-inner{
+
+    min-height:70px;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.logo{
+
+    font-size:23px;
+
+    font-weight:900;
+
+    color:#43e8ff;
+
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#ffffff;
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+
+    font-size:14px;
+
+    color:#a8b9ca;
+
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:#43e8ff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:
+        100px
+        20px
+        90px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            #12435e 0%,
+            #071827 35%,
+            #050b13 70%
+        );
+}
+
+.live-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        7px 15px;
+
+    border-radius:50px;
+
+    border:
+        1px solid #286072;
+
+    background:#09202b;
+
+    color:#62f5b1;
+
+    font-size:13px;
+
+    margin-bottom:22px;
+}
+
+.live-dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:#4df58b;
+
+    box-shadow:
+        0 0 14px #4df58b;
+}
+
+.hero h1{
+
+    font-size:
+        clamp(42px,8vw,82px);
+
+    line-height:1;
+
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:#43e8ff;
+}
+
+.hero-subtitle{
+
+    max-width:850px;
+
+    margin:
+        25px auto;
+
+    color:#aabccd;
+
+    font-size:18px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:28px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+
+    display:inline-block;
+
+    padding:
+        11px 18px;
+
+    border-radius:10px;
+
+    border:
+        1px solid #29465d;
+
+    background:#102337;
+
+    color:#ffffff;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-2px);
+
+    border-color:#43e8ff;
+}
+
+.btn-primary{
+
+    background:#43e8ff;
+
+    color:#031018;
+
+    border:none;
+}
+
+.btn-green{
+
+    background:#5df29b;
+
+    color:#03140b;
+
+    border:none;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+    padding:75px 0;
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:42px;
+}
+
+.section-title h2{
+
+    font-size:35px;
+
+    margin-bottom:8px;
+}
+
+.section-title p{
+
+    color:#8298ad;
+
+    font-size:15px;
+}
+
+
+/* =========================================================
+   QUICK FACTS
+========================================================= */
+
+.top-stats{
+
+    margin-top:-35px;
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.top-stat{
+
+    background:#0b1827;
+
+    border:
+        1px solid #1e374d;
+
+    border-radius:16px;
+
+    padding:23px;
+
+    text-align:center;
+}
+
+.top-stat strong{
+
+    display:block;
+
+    font-size:27px;
+
+    color:#43e8ff;
+}
+
+.top-stat span{
+
+    display:block;
+
+    color:#8297aa;
+
+    font-size:13px;
+
+    margin-top:4px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+
+    background:#0b1827;
+
+    border:
+        1px solid #1d354b;
+
+    border-radius:18px;
+
+    padding:25px;
+}
+
+.card h3{
+
+    color:#43e8ff;
+
+    margin-bottom:10px;
+
+    font-size:21px;
+}
+
+.card p{
+
+    color:#9fb0c1;
+}
+
+.card ul{
+
+    padding-left:20px;
+
+    color:#9fb0c1;
+}
+
+.card li{
+    margin:6px 0;
+}
+
+
+/* =========================================================
+   NETWORKS
+========================================================= */
+
+.network-section{
+
+    background:#07121e;
+
+    border-top:
+        1px solid #152b3e;
+
+    border-bottom:
+        1px solid #152b3e;
+}
+
+.network-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:25px;
+}
+
+.network-card{
+
+    background:#0b1928;
+
+    border:
+        1px solid #223b51;
+
+    border-radius:20px;
+
+    padding:30px;
+}
+
+.mainnet-card{
+    border-top:
+        4px solid #43e8ff;
+}
+
+.testnet-card{
+    border-top:
+        4px solid #62f59a;
+}
+
+.network-heading{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+}
+
+.network-heading h3{
+    font-size:26px;
+}
+
+.mainnet-card h3{
+    color:#43e8ff;
+}
+
+.testnet-card h3{
+    color:#62f59a;
+}
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#62f59a;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.info-row{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1.5fr;
+
+    gap:15px;
+
+    padding:
+        11px 0;
+
+    border-bottom:
+        1px solid #1c3348;
+}
+
+.info-row label{
+    color:#7f94a9;
+}
+
+.info-row strong{
+
+    text-align:right;
+
+    word-break:
+        break-word;
+}
+
+
+/* =========================================================
+   LIVE DASHBOARD
+========================================================= */
+
+.dashboard{
+
+    background:#050d16;
+}
+
+.live-network{
+
+    margin-bottom:45px;
+}
+
+.live-network:last-child{
+    margin-bottom:0;
+}
+
+.live-header{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:18px;
+}
+
+.live-header h3{
+    font-size:23px;
+}
+
+.main-title{
+    color:#43e8ff;
+}
+
+.test-title{
+    color:#62f59a;
+}
+
+.refresh-status{
+
+    color:#6ef3a4;
+
+    font-size:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+}
+
+.live-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.live-box{
+
+    background:#0b1928;
+
+    border:
+        1px solid #1d354a;
+
+    border-radius:15px;
+
+    padding:20px;
+}
+
+.live-box small{
+
+    display:block;
+
+    color:#8196aa;
+
+    font-size:12px;
+}
+
+.live-box strong{
+
+    display:block;
+
+    color:#43e8ff;
+
+    font-size:23px;
+
+    margin-top:5px;
+
+    word-break:
+        break-word;
+}
+
+.test-live strong{
+    color:#62f59a;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.table-container{
+
+    overflow-x:auto;
+
+    background:#0b1928;
+
+    border:
+        1px solid #1d354a;
+
+    border-radius:16px;
+}
+
+table{
+
+    width:100%;
+
+    min-width:650px;
+
+    border-collapse:
+        collapse;
+}
+
+th{
+
+    padding:14px;
+
+    background:#0e2133;
+
+    color:#43e8ff;
+
+    text-align:left;
+
+    font-size:13px;
+}
+
+td{
+
+    padding:14px;
+
+    border-bottom:
+        1px solid #1a3043;
+
+    color:#aebdcd;
+
+    font-size:13px;
+}
+
+.hash{
+
+    color:#43e8ff;
+
+    font-family:
+        monospace;
+}
+
+.success{
+    color:#62f59a;
+}
+
+.error{
+    color:#ff7777;
+}
+
+.loading{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#8196aa;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-section{
+
+    background:#07121e;
+
+    border-top:
+        1px solid #152b3e;
+
+    border-bottom:
+        1px solid #152b3e;
+}
+
+.search-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:10px;
+}
+
+.search-box input{
+
+    flex:1;
+
+    padding:14px 16px;
+
+    background:#0c1b2b;
+
+    color:white;
+
+    border:
+        1px solid #294258;
+
+    border-radius:10px;
+
+    outline:none;
+}
+
+.search-box input:focus{
+
+    border-color:
+        #43e8ff;
+}
+
+
+/* =========================================================
+   ECOSYSTEM
+========================================================= */
+
+.ecosystem{
+    background:#07121e;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    text-align:center;
+
+    padding:
+        80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a273b,
+            #06141f
+        );
+
+    border-top:
+        1px solid #1d3b51;
+
+    border-bottom:
+        1px solid #1d3b51;
+}
+
+.cta h2{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+}
+
+.cta p{
+
+    max-width:750px;
+
+    margin:
+        0 auto;
+
+    color:#9eb1c3;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    text-align:center;
+
+    padding:
+        45px 20px;
+
+    background:#03080e;
+
+    color:#71879b;
+}
+
+.footer-brand{
+
+    font-size:21px;
+
+    font-weight:900;
+
+    color:#43e8ff;
+
+    margin-bottom:7px;
+}
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:#8fa4b7;
+}
+
+.footer-links a:hover{
+    color:#43e8ff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .network-grid{
+        grid-template-columns:1fr;
+    }
+
+    .top-stats{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .live-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:560px){
+
+    .hero{
+
+        padding:
+            70px 15px 65px;
+    }
+
+    .hero-subtitle{
+        font-size:16px;
+    }
+
+    .top-stats,
+    .live-grid,
+    .cards{
+
+        grid-template-columns:1fr;
+    }
+
+    .info-row{
+        grid-template-columns:1fr;
+    }
+
+    .info-row strong{
+        text-align:left;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+<div class="container nav-inner">
+
+<a href="#" class="logo">
+AJJRA <span>TECHNO HUB</span>
+</a>
+
+<div class="nav-links">
+
+<a href="#about">About</a>
+
+<a href="#networks">Networks</a>
+
+<a href="#live">Live</a>
+
+<a href="#blocks">Blocks</a>
+
+<a href="#transactions">Transactions</a>
+
+<a href="#search">Search</a>
+
+<a href="#ecosystem">Ecosystem</a>
+
+<a href="#register">Join</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="container">
+
+<div class="live-badge">
+
+<span class="live-dot"></span>
+
+MSTC BLOCKCHAIN LIVE PORTAL
+
+</div>
+
+
+<h1>
+
+MST <span>Blockchain</span>
+
+</h1>
+
+
+<p class="hero-subtitle">
+
+Explore MST Blockchain Mainnet and Testnet
+with live network statistics, blocks,
+transactions, EVM infrastructure,
+Web3 ecosystem and blockchain resources.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+class="btn btn-primary"
+href="https://mstblockchain.com"
+target="_blank"
+rel="noopener">
+
+Official MST Website
+
+</a>
+
+
+<a
+class="btn"
+href="https://mstscan.com"
+target="_blank"
+rel="noopener">
+
+Mainnet Explorer
+
+</a>
+
+
+<a
+class="btn"
+href="https://testnet.mstscan.com"
+target="_blank"
+rel="noopener">
+
+Testnet Explorer
+
+</a>
+
+
+<a
+class="btn btn-green"
+href="https://mstblockchain.com/portal/register/VeY52672"
+target="_blank"
+rel="noopener">
+
+🚀 Register / Join MST
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     QUICK FACTS
+===================================================== -->
+
+<div class="container">
+
+<div class="top-stats">
+
+<div class="top-stat">
+
+<strong>Layer 1</strong>
+
+<span>
+Public Blockchain
+</span>
+
+</div>
+
+
+<div class="top-stat">
+
+<strong>EVM</strong>
+
+<span>
+EVM Compatible
+</span>
+
+</div>
+
+
+<div class="top-stat">
+
+<strong>PoSA</strong>
+
+<span>
+Consensus
+</span>
+
+</div>
+
+
+<div class="top-stat">
+
+<strong>~3 sec</strong>
+
+<span>
+Average Block Time
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+MST Blockchain
+</h2>
+
+<p>
+Blockchain overview
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+🔗 Layer-1
+</h3>
+
+<p>
+
+MST is presented as an independent
+public Layer-1 blockchain designed
+for smart contracts, decentralized
+applications and Web3 infrastructure.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+⚡ EVM Compatible
+</h3>
+
+<p>
+
+EVM compatibility allows developers
+to work with Solidity and familiar
+Ethereum-compatible development tools.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🛡️ PoSA
+</h3>
+
+<p>
+
+MST documentation describes a
+Proof of Stake Authority style
+consensus architecture.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🚀 Fast Blocks
+</h3>
+
+<p>
+
+The MST explorer currently reports
+an average block time of approximately
+3 seconds.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🌐 Web3
+</h3>
+
+<p>
+
+MST can be used as infrastructure
+for tokens, NFTs, DeFi, applications,
+gaming and other Web3 projects.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🔐 Blockchain Records
+</h3>
+
+<p>
+
+Transactions and smart-contract
+activity can be inspected through
+the MSTScan blockchain explorer.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MAINNET / TESTNET
+===================================================== -->
+
+<section
+id="networks"
+class="network-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Mainnet & Testnet
+</h2>
+
+<p>
+Network configuration
+</p>
+
+</div>
+
+
+<div class="network-grid">
+
+
+<!-- MAINNET -->
+
+<div class="network-card mainnet-card">
+
+<div class="network-heading">
+
+<h3>
+🔵 MST Mainnet
+</h3>
+
+<div class="status">
+
+<span class="live-dot"></span>
+
+LIVE
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Network
+</label>
+
+<strong>
+MST Mainnet
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Chain ID
+</label>
+
+<strong>
+4646
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Hex
+</label>
+
+<strong>
+0x1226
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Native Coin
+</label>
+
+<strong>
+MSTC
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Decimals
+</label>
+
+<strong>
+18
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+RPC
+</label>
+
+<strong>
+4646.rpc.thirdweb.com
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Explorer
+</label>
+
+<strong>
+mstscan.com
+</strong>
+
+</div>
+
+
+<div class="hero-buttons">
+
+<a
+class="btn btn-primary"
+href="https://mstscan.com"
+target="_blank"
+rel="noopener">
+
+Explorer
+
+</a>
+
+
+<button
+class="btn"
+onclick="addMainnet()">
+
+Add Wallet
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- TESTNET -->
+
+<div class="network-card testnet-card">
+
+<div class="network-heading">
+
+<h3>
+🟢 MST Testnet
+</h3>
+
+<div class="status">
+
+<span class="live-dot"></span>
+
+LIVE
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Network
+</label>
+
+<strong>
+MST Testnet
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Chain ID
+</label>
+
+<strong>
+91562037
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Hex
+</label>
+
+<strong>
+0x578d8d5
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Native Coin
+</label>
+
+<strong>
+tMSTC
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Decimals
+</label>
+
+<strong>
+18
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+RPC
+</label>
+
+<strong>
+testnetrpc.mstblockchain.com
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<label>
+Explorer
+</label>
+
+<strong>
+testnet.mstscan.com
+</strong>
+
+</div>
+
+
+<div class="hero-buttons">
+
+<a
+class="btn btn-green"
+href="https://testnet.mstscan.com"
+target="_blank"
+rel="noopener">
+
+Explorer
+
+</a>
+
+
+<button
+class="btn"
+onclick="addTestnet()">
+
+Add Wallet
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LIVE DASHBOARD
+===================================================== -->
+
+<section
+id="live"
+class="dashboard">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+📡 Live Blockchain Dashboard
+</h2>
+
+<p>
+Explorer data automatically refreshes every 15 seconds
+</p>
+
+</div>
+
+
+<!-- MAINNET LIVE -->
+
+<div class="live-network">
+
+<div class="live-header">
+
+<h3 class="main-title">
+🔵 MST Mainnet
+</h3>
+
+<div class="refresh-status">
+
+<span class="live-dot"></span>
+
+LIVE
+
+</div>
+
+</div>
+
+
+<div class="live-grid">
+
+
+<div class="live-box">
+
+<small>
+Total Blocks
+</small>
+
+<strong id="mainBlocks">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Total Transactions
+</small>
+
+<strong id="mainTx">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Total Addresses
+</small>
+
+<strong id="mainAddresses">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Average Block Time
+</small>
+
+<strong id="mainBlockTime">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Total Contracts
+</small>
+
+<strong id="mainContracts">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+24h Transactions
+</small>
+
+<strong id="main24Tx">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+24h Fees
+</small>
+
+<strong id="main24Fees">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Average Fee
+</small>
+
+<strong id="mainAvgFee">
+Loading...
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TESTNET LIVE -->
+
+<div class="live-network">
+
+<div class="live-header">
+
+<h3 class="test-title">
+🟢 MST Testnet
+</h3>
+
+<div class="refresh-status">
+
+<span class="live-dot"></span>
+
+LIVE
+
+</div>
+
+</div>
+
+
+<div class="live-grid test-live">
+
+
+<div class="live-box">
+
+<small>
+Total Blocks
+</small>
+
+<strong id="testBlocks">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Total Transactions
+</small>
+
+<strong id="testTx">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Total Addresses
+</small>
+
+<strong id="testAddresses">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Average Block Time
+</small>
+
+<strong id="testBlockTime">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Total Contracts
+</small>
+
+<strong id="testContracts">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+24h Transactions
+</small>
+
+<strong id="test24Tx">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+24h Fees
+</small>
+
+<strong id="test24Fees">
+Loading...
+</strong>
+
+</div>
+
+
+<div class="live-box">
+
+<small>
+Average Fee
+</small>
+
+<strong id="testAvgFee">
+Loading...
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BLOCKS
+===================================================== -->
+
+<section id="blocks">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+⛓️ Latest Blocks
+</h2>
+
+<p>
+Live blocks from Mainnet and Testnet
+</p>
+
+</div>
+
+
+<div class="network-grid">
+
+
+<!-- MAINNET BLOCKS -->
+
+<div>
+
+<h3
+style="
+color:#43e8ff;
+margin-bottom:15px;
+">
+
+🔵 Mainnet Blocks
+
+</h3>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Block
+</th>
+
+<th>
+Time
+</th>
+
+<th>
+Transactions
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="mainBlocksTable">
+
+<tr>
+
+<td
+colspan="3"
+class="loading">
+
+Loading...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- TESTNET BLOCKS -->
+
+<div>
+
+<h3
+style="
+color:#62f59a;
+margin-bottom:15px;
+">
+
+🟢 Testnet Blocks
+
+</h3>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Block
+</th>
+
+<th>
+Time
+</th>
+
+<th>
+Transactions
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="testBlocksTable">
+
+<tr>
+
+<td
+colspan="3"
+class="loading">
+
+Loading...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TRANSACTIONS
+===================================================== -->
+
+<section id="transactions">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+💸 Latest Transactions
+</h2>
+
+<p>
+Live Mainnet and Testnet transactions
+</p>
+
+</div>
+
+
+<div class="network-grid">
+
+
+<!-- MAINNET -->
+
+<div>
+
+<h3
+style="
+color:#43e8ff;
+margin-bottom:15px;
+">
+
+🔵 Mainnet Transactions
+
+</h3>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Transaction
+</th>
+
+<th>
+Status
+</th>
+
+<th>
+Value
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="mainTxTable">
+
+<tr>
+
+<td
+colspan="3"
+class="loading">
+
+Loading...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- TESTNET -->
+
+<div>
+
+<h3
+style="
+color:#62f59a;
+margin-bottom:15px;
+">
+
+🟢 Testnet Transactions
+
+</h3>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Transaction
+</th>
+
+<th>
+Status
+</th>
+
+<th>
+Value
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="testTxTable">
+
+<tr>
+
+<td
+colspan="3"
+class="loading">
+
+Loading...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section
+id="search"
+class="search-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+🔎 MST Explorer Search
+</h2>
+
+<p>
+Search Mainnet by address, transaction or block
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+id="searchInput"
+type="text"
+placeholder="Address / Transaction Hash / Block Number"
+>
+
+
+<button
+class="btn btn-primary"
+onclick="searchExplorer()">
+
+Search
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TECHNOLOGY
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+MST Technology
+</h2>
+
+<p>
+Core blockchain features
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+⚡ EVM
+</h3>
+
+<p>
+
+EVM-compatible smart contract
+infrastructure for Solidity-based
+applications.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🛡️ PoSA
+</h3>
+
+<p>
+
+Validator-oriented consensus
+architecture used by MST.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+⛓️ Smart Contracts
+</h3>
+
+<p>
+
+Develop tokens, NFTs and
+decentralized applications.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🎨 NFTs
+</h3>
+
+<p>
+
+Digital assets, certificates,
+collectibles and ownership systems.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🌱 Carbon
+</h3>
+
+<p>
+
+Blockchain applications for
+carbon-credit tracking and records.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🌐 Web3
+</h3>
+
+<p>
+
+Infrastructure for decentralized
+applications and digital services.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ECOSYSTEM
+===================================================== -->
+
+<section
+id="ecosystem"
+class="ecosystem">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+MST Ecosystem
+</h2>
+
+<p>
+Selected MST ecosystem resources
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🔑 BridgeKey
+</h3>
+
+<p>
+
+Wallet and digital asset
+infrastructure.
+
+</p>
+
+
+<a
+class="btn"
+style="margin-top:15px;"
+href="https://bridgekey.io"
+target="_blank"
+rel="noopener">
+
+Open BridgeKey
+
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🤖 MST Buddy
+</h3>
+
+<p>
+
+MST ecosystem assistant
+and interaction platform.
+
+</p>
+
+
+<a
+class="btn"
+style="margin-top:15px;"
+href="https://buddy.mstblockchain.com"
+target="_blank"
+rel="noopener">
+
+Open MST Buddy
+
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🔐 SARAL Protocol
+</h3>
+
+<p>
+
+Web3 onboarding and
+developer infrastructure.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+⚙️ WASMify
+</h3>
+
+<p>
+
+Web2 and Web3 application
+technology direction.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🎓 MasterStroke Academy
+</h3>
+
+<p>
+
+Blockchain and Web3
+learning ecosystem.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+📜 ProofEasy
+</h3>
+
+<p>
+
+Blockchain-based proof
+and verification infrastructure.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     USE CASES
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+MST Blockchain Use Cases
+</h2>
+
+<p>
+Examples of applications that can be built on MST
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🏠 RWA
+</h3>
+
+<p>
+Real-world asset and property tokenization.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🌳 Carbon Credits
+</h3>
+
+<p>
+Carbon credit tracking and retirement systems.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🎨 NFTs
+</h3>
+
+<p>
+NFT minting, ownership and marketplaces.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+💰 DeFi
+</h3>
+
+<p>
+Decentralized finance applications.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🎮 Gaming
+</h3>
+
+<p>
+Blockchain gaming and digital assets.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+📜 Certificates
+</h3>
+
+<p>
+Tamper-resistant digital certificates.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🚚 Supply Chain
+</h3>
+
+<p>
+Transparent supply-chain records.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+💳 Payments
+</h3>
+
+<p>
+Blockchain-based payment applications.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🪪 Digital Identity
+</h3>
+
+<p>
+Blockchain identity and verification solutions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     REGISTER
+===================================================== -->
+
+<section
+id="register"
+class="cta">
+
+<div class="container">
+
+<h2>
+🚀 Join MSTC Blockchain
+</h2>
+
+<p>
+
+Explore MST Blockchain, view live network
+activity and participate in the ecosystem.
+
+</p>
+
+
+<div class="hero-buttons">
+
+
+<a
+class="btn btn-primary"
+href="https://mstblockchain.com/portal/register/VeY52672"
+target="_blank"
+rel="noopener">
+
+Register / Join MSTC
+
+</a>
+
+
+<a
+class="btn"
+href="https://mstblockchain.com"
+target="_blank"
+rel="noopener">
+
+Official Website
+
+</a>
+
+
+<a
+class="btn"
+href="https://mstscan.com"
+target="_blank"
+rel="noopener">
+
+Mainnet
+
+</a>
+
+
+<a
+class="btn btn-green"
+href="https://testnet.mstscan.com"
+target="_blank"
+rel="noopener">
+
+Testnet
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-brand">
+
+AJJRA TECHNO HUB
+
+</div>
+
+
+<p>
+MSTC Blockchain Mainnet & Testnet Live Portal
+</p>
+
+
+<div class="footer-links">
+
+<a
+href="https://mstblockchain.com"
+target="_blank"
+rel="noopener">
+
+MST Blockchain
+
+</a>
+
+
+<a
+href="https://mstscan.com"
+target="_blank"
+rel="noopener">
+
+Mainnet Explorer
+
+</a>
+
+
+<a
+href="https://testnet.mstscan.com"
+target="_blank"
+rel="noopener">
+
+Testnet Explorer
+
+</a>
+
+
+<a
+href="https://mstblockchain.com/portal/register/VeY52672"
+target="_blank"
+rel="noopener">
+
+Register
+
+</a>
+
+</div>
+
+
+<p>
+Live data refresh: 15 seconds
+</p>
+
+
+<p style="margin-top:8px;">
+© 2026 AJJRA TECHNO HUB
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   MST API
+========================================================= */
+
+const MAIN_API =
+"https://mstscan.com/api/v2";
+
+const TEST_API =
+"https://testnet.mstscan.com/api/v2";
+
+
+const MAIN_EXPLORER =
+"https://mstscan.com";
+
+const TEST_EXPLORER =
+"https://testnet.mstscan.com";
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function setText(id,value){
+
+    const element =
+        document.getElementById(id);
+
+    if(element){
+
+        element.textContent =
+            value;
+
+    }
+}
+
+
+function formatNumber(value){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === ""
+    ){
+
+        return "—";
+
+    }
+
+    const n =
+        Number(value);
+
+    if(
+        Number.isFinite(n)
+    ){
+
+        return n.toLocaleString(
+            undefined,
+            {
+                maximumFractionDigits:2
+            }
+        );
+
+    }
+
+    return String(value);
+}
+
+
+/* =========================================================
+   COIN FORMAT
+========================================================= */
+
+function formatCoin(value,symbol){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === ""
+    ){
+
+        return "—";
+
+    }
+
+    try{
+
+        const n =
+            Number(value);
+
+        if(
+            Number.isFinite(n)
+        ){
+
+            /*
+              Explorer transaction values
+              are normally represented in
+              the smallest native unit.
+            */
+
+            if(
+                Math.abs(n) >= 1000000000000
+            ){
+
+                return (
+                    n / 1e18
+                ).toLocaleString(
+                    undefined,
+                    {
+                        maximumFractionDigits:6
+                    }
+                )
+                +
+                " "
+                +
+                symbol;
+
+            }
+
+            return (
+                n.toLocaleString(
+                    undefined,
+                    {
+                        maximumFractionDigits:6
+                    }
+                )
+                +
+                " "
+                +
+                symbol
+            );
+
+        }
+
+    }
+    catch(e){}
+
+    return String(value);
+
+}
+
+
+/* =========================================================
+   API REQUEST
+========================================================= */
+
+async function getJSON(url){
+
+    const response =
+        await fetch(
+            url,
+            {
+                method:"GET",
+                headers:{
+                    "Accept":
+                    "application/json"
+                },
+                cache:"no-store"
+            }
+        );
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "HTTP " +
+            response.status
+        );
+
+    }
+
+
+    return await response.json();
+
+}
+
+
+/* =========================================================
+   FIND FIELD
+========================================================= */
+
+function firstValue(
+    object,
+    fields
+){
+
+    for(
+        const field of fields
+    ){
+
+        if(
+            object &&
+            object[field] !== undefined &&
+            object[field] !== null
+        ){
+
+            return object[field];
+
+        }
+
+    }
+
+    return null;
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+async function loadStats(
+    api,
+    type
+){
+
+    try{
+
+        const data =
+            await getJSON(
+                api + "/stats"
+            );
+
+
+        const prefix =
+            type === "main"
+            ? "main"
+            : "test";
+
+
+        const symbol =
+            type === "main"
+            ? "MSTC"
+            : "tMSTC";
+
+
+        const blocks =
+            firstValue(
+                data,
+                [
+                    "total_blocks"
+                ]
+            );
+
+
+        const transactions =
+            firstValue(
+                data,
+                [
+                    "total_transactions",
+                    "total_txns"
+                ]
+            );
+
+
+        const addresses =
+            firstValue(
+                data,
+                [
+                    "total_addresses",
+                    "total_accounts"
+                ]
+            );
+
+
+        const blockTime =
+            firstValue(
+                data,
+                [
+                    "average_block_time"
+                ]
+            );
+
+
+        const contracts =
+            firstValue(
+                data,
+                [
+                    "total_contracts"
+                ]
+            );
+
+
+        const tx24 =
+            firstValue(
+                data,
+                [
+                    "transactions_count_24h",
+                    "transactions_24h"
+                ]
+            );
+
+
+        const fees24 =
+            firstValue(
+                data,
+                [
+                    "total_transaction_fees_24h"
+                ]
+            );
+
+
+        const avgFee =
+            firstValue(
+                data,
+                [
+                    "average_transaction_fee_24h"
+                ]
+            );
+
+
+        setText(
+            prefix + "Blocks",
+            formatNumber(blocks)
+        );
+
+
+        setText(
+            prefix + "Tx",
+            formatNumber(transactions)
+        );
+
+
+        setText(
+            prefix + "Addresses",
+            formatNumber(addresses)
+        );
+
+
+        setText(
+            prefix + "BlockTime",
+
+            blockTime !== null
+            ?
+
+            Number(blockTime).toFixed(2)
+            + " sec"
+
+            :
+
+            "—"
+        );
+
+
+        setText(
+            prefix + "Contracts",
+            formatNumber(contracts)
+        );
+
+
+        setText(
+            prefix + "24Tx",
+            formatNumber(tx24)
+        );
+
+
+        setText(
+            prefix + "24Fees",
+
+            fees24 !== null
+            ?
+
+            formatCoin(
+                fees24,
+                symbol
+            )
+
+            :
+
+            "—"
+        );
+
+
+        setText(
+            prefix + "AvgFee",
+
+            avgFee !== null
+            ?
+
+            formatCoin(
+                avgFee,
+                symbol
+            )
+
+            :
+
+            "—"
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            type +
+            " stats:",
+            error
+        );
+
+
+        const prefix =
+            type === "main"
+            ? "main"
+            : "test";
+
+
+        [
+            "Blocks",
+            "Tx",
+            "Addresses",
+            "BlockTime",
+            "Contracts",
+            "24Tx",
+            "24Fees",
+            "AvgFee"
+        ]
+        .forEach(
+            field => {
+
+                setText(
+                    prefix + field,
+                    "Unavailable"
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   BLOCKS
+========================================================= */
+
+async function loadBlocks(
+    api,
+    tableId,
+    explorer
+){
+
+    const tbody =
+        document.getElementById(
+            tableId
+        );
+
+
+    try{
+
+        const data =
+            await getJSON(
+                api +
+                "/blocks?items_count=8"
+            );
+
+
+        const items =
+            Array.isArray(data.items)
+            ? data.items
+            : [];
+
+
+        tbody.innerHTML = "";
+
+
+        if(
+            items.length === 0
+        ){
+
+            tbody.innerHTML = `
+
+                <tr>
+
+                    <td
+                    colspan="3"
+                    class="loading">
+
+                    No block data available.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        items.forEach(
+            block => {
+
+                const number =
+                    firstValue(
+                        block,
+                        [
+                            "height",
+                            "number",
+                            "block_number"
+                        ]
+                    );
+
+
+                const timestamp =
+                    firstValue(
+                        block,
+                        [
+                            "timestamp"
+                        ]
+                    );
+
+
+                const txCount =
+                    firstValue(
+                        block,
+                        [
+                            "tx_count",
+                            "transaction_count"
+                        ]
+                    );
+
+
+                const tr =
+                    document.createElement(
+                        "tr"
+                    );
+
+
+                const safeNumber =
+                    number !== null
+                    ? String(number)
+                    : "—";
+
+
+                const time =
+                    timestamp
+                    ?
+
+                    new Date(
+                        timestamp
+                    ).toLocaleString()
+
+                    :
+
+                    "—";
+
+
+                tr.innerHTML = `
+
+                    <td>
+
+                        <a
+                        class="hash"
+                        href="${explorer}/block/${encodeURIComponent(safeNumber)}"
+                        target="_blank"
+                        rel="noopener">
+
+                        ${formatNumber(number)}
+
+                        </a>
+
+                    </td>
+
+
+                    <td>
+                        ${time}
+                    </td>
+
+
+                    <td>
+                        ${formatNumber(txCount)}
+                    </td>
+
+                `;
+
+
+                tbody.appendChild(tr);
+
+            }
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Blocks:",
+            error
+        );
+
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td
+                colspan="3"
+                class="loading">
+
+                Live block data unavailable.
+
+                <br>
+
+                <small>
+                Please check the explorer directly.
+                </small>
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================================
+   TRANSACTIONS
+========================================================= */
+
+async function loadTransactions(
+    api,
+    tableId,
+    explorer,
+    symbol
+){
+
+    const tbody =
+        document.getElementById(
+            tableId
+        );
+
+
+    try{
+
+        const data =
+            await getJSON(
+                api +
+                "/transactions?filter=validated&items_count=8"
+            );
+
+
+        const items =
+            Array.isArray(data.items)
+            ? data.items
+            : [];
+
+
+        tbody.innerHTML = "";
+
+
+        if(
+            items.length === 0
+        ){
+
+            tbody.innerHTML = `
+
+                <tr>
+
+                    <td
+                    colspan="3"
+                    class="loading">
+
+                    No transaction data available.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        items.forEach(
+            tx => {
+
+                const hash =
+                    tx.hash || "";
+
+
+                const status =
+                    tx.status ||
+                    tx.result ||
+                    "Success";
+
+
+                const value =
+                    tx.value ??
+                    0;
+
+
+                let statusClass =
+                    "success";
+
+
+                if(
+                    String(status)
+                    .toLowerCase()
+                    .includes("fail")
+                    ||
+                    String(status)
+                    .toLowerCase()
+                    .includes("error")
+                ){
+
+                    statusClass =
+                        "error";
+
+                }
+
+
+                const tr =
+                    document.createElement(
+                        "tr"
+                    );
+
+
+                tr.innerHTML = `
+
+                    <td>
+
+                        <a
+                        class="hash"
+                        href="${explorer}/tx/${encodeURIComponent(hash)}"
+                        target="_blank"
+                        rel="noopener">
+
+                        ${shortHash(hash)}
+
+                        </a>
+
+                    </td>
+
+
+                    <td class="${statusClass}">
+
+                        ${escapeHTML(
+                            String(status)
+                        )}
+
+                    </td>
+
+
+                    <td>
+
+                        ${formatCoin(
+                            value,
+                            symbol
+                        )}
+
+                    </td>
+
+                `;
+
+
+                tbody.appendChild(tr);
+
+            }
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Transactions:",
+            error
+        );
+
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td
+                colspan="3"
+                class="loading">
+
+                Live transaction data unavailable.
+
+                <br>
+
+                <small>
+                Please check the explorer directly.
+                </small>
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value){
+
+    return value
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =========================================================
+   SHORT HASH
+========================================================= */
+
+function shortHash(hash){
+
+    if(!hash){
+        return "—";
+    }
+
+
+    if(
+        hash.length <= 20
+    ){
+
+        return hash;
+
+    }
+
+
+    return (
+
+        hash.substring(
+            0,
+            10
+        )
+
+        +
+
+        "..."
+
+        +
+
+        hash.substring(
+            hash.length - 8
+        )
+
+    );
+
+}
+
+
+/* =========================================================
+   LOAD EVERYTHING
+========================================================= */
+
+async function loadAll(){
+
+    await Promise.allSettled([
+
+        loadStats(
+            MAIN_API,
+            "main"
+        ),
+
+        loadStats(
+            TEST_API,
+            "test"
+        ),
+
+        loadBlocks(
+            MAIN_API,
+            "mainBlocksTable",
+            MAIN_EXPLORER
+        ),
+
+        loadBlocks(
+            TEST_API,
+            "testBlocksTable",
+            TEST_EXPLORER
+        ),
+
+        loadTransactions(
+            MAIN_API,
+            "mainTxTable",
+            MAIN_EXPLORER,
+            "MSTC"
+        ),
+
+        loadTransactions(
+            TEST_API,
+            "testTxTable",
+            TEST_EXPLORER,
+            "tMSTC"
+        )
+
+    ]);
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchExplorer(){
+
+    const input =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    const value =
+        input.value.trim();
+
+
+    if(!value){
+
+        alert(
+            "Enter an address, transaction hash or block number."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        /^0x[a-fA-F0-9]{64}$/
+        .test(value)
+    ){
+
+        window.open(
+            MAIN_EXPLORER +
+            "/tx/" +
+            value,
+
+            "_blank"
+        );
+
+        return;
+
+    }
+
+
+    if(
+        /^0x[a-fA-F0-9]{40}$/
+        .test(value)
+    ){
+
+        window.open(
+            MAIN_EXPLORER +
+            "/address/" +
+            value,
+
+            "_blank"
+        );
+
+        return;
+
+    }
+
+
+    if(
+        /^[0-9]+$/
+        .test(value)
+    ){
+
+        window.open(
+            MAIN_EXPLORER +
+            "/block/" +
+            value,
+
+            "_blank"
+        );
+
+        return;
+
+    }
+
+
+    window.open(
+        MAIN_EXPLORER,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================================
+   ADD MAINNET
+========================================================= */
+
+async function addMainnet(){
+
+    if(!window.ethereum){
+
+        alert(
+            "Please install MetaMask or another EVM wallet."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await window.ethereum.request({
+
+            method:
+            "wallet_addEthereumChain",
+
+            params:[{
+
+                chainId:
+                "0x1226",
+
+                chainName:
+                "MST Mainnet",
+
+                nativeCurrency:{
+
+                    name:
+                    "MSTC",
+
+                    symbol:
+                    "MSTC",
+
+                    decimals:
+                    18
+
+                },
+
+                rpcUrls:[
+
+                    "https://4646.rpc.thirdweb.com"
+
+                ],
+
+                blockExplorerUrls:[
+
+                    "https://mstscan.com"
+
+                ]
+
+            }]
+
+        });
+
+
+        alert(
+            "MST Mainnet added successfully."
+        );
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "MST Mainnet could not be added."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   ADD TESTNET
+========================================================= */
+
+async function addTestnet(){
+
+    if(!window.ethereum){
+
+        alert(
+            "Please install MetaMask or another EVM wallet."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await window.ethereum.request({
+
+            method:
+            "wallet_addEthereumChain",
+
+            params:[{
+
+                chainId:
+                "0x578d8d5",
+
+                chainName:
+                "MST Testnet",
+
+                nativeCurrency:{
+
+                    name:
+                    "MST Test Coin",
+
+                    symbol:
+                    "tMSTC",
+
+                    decimals:
+                    18
+
+                },
+
+                rpcUrls:[
+
+                    "https://testnetrpc.mstblockchain.com"
+
+                ],
+
+                blockExplorerUrls:[
+
+                    "https://testnet.mstscan.com"
+
+                ]
+
+            }]
+
+        });
+
+
+        alert(
+            "MST Testnet added successfully."
+        );
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "MST Testnet could not be added."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   ENTER KEY
+========================================================= */
+
+document
+.getElementById(
+    "searchInput"
+)
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter"
+        ){
+
+            searchExplorer();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FIRST LOAD
+========================================================= */
+
+loadAll();
+
+
+/* =========================================================
+   AUTO REFRESH
+========================================================= */
+
+setInterval(
+    loadAll,
+    15000
+);
+
+</script>
+
+</body>
+
+</html>
