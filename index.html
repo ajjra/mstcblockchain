@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AJJRA TECHNO HUB | MSTC Blockchain</title>
+
+<meta name="description"
+content="AJJRA TECHNO HUB - Live MSTC Blockchain Network Statistics">
+<meta name="theme-color" content="#07111f">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#07111f;
+    color:#fff;
+    line-height:1.5;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,17,31,.96);
+    border-bottom:1px solid #1c3048;
+    backdrop-filter:blur(10px);
+}
+
+.nav-inner{
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:#20e0a5;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.nav-links a{
+    color:#b9c7d8;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#20e0a5;
+}
+
+/* HERO */
+.hero{
+    padding:75px 0 60px;
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 0%,#123b45 0%,transparent 48%);
+}
+
+.hero h1{
+    font-size:clamp(34px,7vw,70px);
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#20e0a5;
+}
+
+.hero p{
+    max-width:720px;
+    margin:auto;
+    color:#aebdce;
+    font-size:17px;
+}
+
+/* BUTTON */
+.register-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:28px;
+    padding:14px 26px;
+    border-radius:10px;
+    background:#20e0a5;
+    color:#06131b;
+    font-weight:800;
+    transition:.2s;
+}
+
+.register-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(32,224,165,.2);
+}
+
+/* SECTION */
+section{
+    padding:65px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#8fa2b7;
+}
+
+/* SEARCH / NETWORK */
+.network-box{
+    background:#0c1a2b;
+    border:1px solid #1c3048;
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:28px;
+}
+
+.controls{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+select,
+input{
+    flex:1;
+    min-width:200px;
+    background:#07111f;
+    border:1px solid #29415e;
+    color:#fff;
+    padding:14px 15px;
+    border-radius:9px;
+    outline:none;
+}
+
+input:focus,
+select:focus{
+    border-color:#20e0a5;
+}
+
+.search-btn{
+    border:0;
+    border-radius:9px;
+    padding:14px 22px;
+    background:#17334a;
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#204965;
+}
+
+.network-info{
+    margin-top:15px;
+    color:#8fa2b7;
+    font-size:13px;
+}
+
+/* STATUS */
+.status{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin:15px 0 25px;
+    color:#9fb0c2;
+    font-size:13px;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#20e0a5;
+    box-shadow:0 0 10px #20e0a5;
+}
+
+/* STATS */
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.stat-card{
+    background:#0c1a2b;
+    border:1px solid #1c3048;
+    border-radius:15px;
+    padding:24px 18px;
+    min-height:130px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transition:.2s;
+}
+
+.stat-card:hover{
+    transform:translateY(-3px);
+    border-color:#20e0a5;
+}
+
+.stat-label{
+    color:#8fa2b7;
+    font-size:13px;
+    margin-bottom:9px;
+}
+
+.stat-value{
+    color:#20e0a5;
+    font-size:28px;
+    font-weight:800;
+    word-break:break-word;
+}
+
+/* ABOUT */
+.about{
+    background:#091522;
+}
+
+.about-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#aebdce;
+    font-size:16px;
+}
+
+/* RESOURCES */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.info-card{
+    background:#0c1a2b;
+    border:1px solid #1c3048;
+    padding:25px;
+    border-radius:15px;
+}
+
+.info-card h3{
+    color:#20e0a5;
+    margin-bottom:10px;
+}
+
+.info-card p{
+    color:#98aabd;
+    font-size:14px;
+}
+
+.info-card a{
+    display:inline-block;
+    margin-top:15px;
+    color:#20e0a5;
+    font-weight:700;
+}
+
+/* FOOTER */
+footer{
+    border-top:1px solid #1c3048;
+    padding:30px 0;
+    text-align:center;
+    color:#71859a;
+    font-size:13px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .nav-inner{
+        flex-direction:column;
+        padding:16px 0;
+    }
+}
+
+@media(max-width:520px){
+    .container{
+        width:94%;
+    }
+
+    .hero{
+        padding:55px 0 45px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat-card{
+        min-height:110px;
+    }
+
+    .stat-value{
+        font-size:25px;
+    }
+
+    .controls{
+        flex-direction:column;
+    }
+
+    select,
+    input,
+    .search-btn{
+        width:100%;
+        min-width:0;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<div class="container nav-inner">
+
+    <div class="logo">
+        AJJRA <span>TECHNO HUB</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#stats">Statistics</a>
+        <a href="#resources">Resources</a>
+        <a href="#register">Register</a>
+    </div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+<div class="container">
+
+    <h1>
+        AJJRA <span>TECHNO HUB</span>
+    </h1>
+
+    <p>
+        MSTC Blockchain Network Statistics
+    </p>
+
+    <div id="register">
+        <a
+          class="register-btn"
+          href="https://mstblockchain.com/portal/register/VeY52672"
+          target="_blank"
+          rel="noopener noreferrer">
+          Register on MSTC
+        </a>
+    </div>
+
+</div>
+</header>
+
+
+<!-- STATISTICS -->
+<section id="stats">
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Live MSTC Statistics</h2>
+        <p>Live network counts from MSTScan</p>
+    </div>
+
+
+    <!-- NETWORK -->
+    <div class="network-box">
+
+        <div class="controls">
+
+            <select id="network">
+                <option value="mainnet">MSTC Mainnet</option>
+                <option value="testnet">MSTC Testnet</option>
+            </select>
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search address / transaction / block...">
+
+            <button
+                class="search-btn"
+                onclick="openSearch()">
+                Search
+            </button>
+
+        </div>
+
+        <div class="network-info" id="networkInfo">
+            Connecting to MSTC Mainnet...
+        </div>
+
+    </div>
+
+
+    <div class="status">
+        <span class="dot"></span>
+        <span id="statusText">Loading live statistics...</span>
+    </div>
+
+
+    <!-- ONLY COUNTS -->
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-label">Total Blocks</div>
+            <div class="stat-value" id="totalBlocks">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Total Transactions</div>
+            <div class="stat-value" id="totalTransactions">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Completed Transactions</div>
+            <div class="stat-value" id="completedTransactions">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Total Addresses</div>
+            <div class="stat-value" id="totalAddresses">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Total Accounts</div>
+            <div class="stat-value" id="totalAccounts">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Deployed Contracts</div>
+            <div class="stat-value" id="totalContracts">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Verified Contracts</div>
+            <div class="stat-value" id="verifiedContracts">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Total Tokens</div>
+            <div class="stat-value" id="totalTokens">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Transactions 24h</div>
+            <div class="stat-value" id="transactions24h">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Pending Transactions</div>
+            <div class="stat-value" id="pendingTransactions">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">MSTC Transfers</div>
+            <div class="stat-value" id="totalTransfers">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Contracts Today</div>
+            <div class="stat-value" id="contractsToday">—</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Verified Contracts Today</div>
+            <div class="stat-value" id="verifiedToday">—</div>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="about">
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>About MSTC</h2>
+        <p>Blockchain Network</p>
+    </div>
+
+    <div class="about-box">
+
+        <p>
+            MSTC Blockchain is a blockchain network supporting
+            decentralized applications, smart contracts, tokens
+            and Web3 ecosystems.
+        </p>
+
+        <br>
+
+        <p>
+            AJJRA TECHNO HUB provides a simple interface to view
+            important live MSTC network statistics.
+        </p>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- RESOURCES -->
+<section id="resources">
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Resources</h2>
+        <p>MSTC Blockchain resources</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="info-card">
+            <h3>MSTC Blockchain</h3>
+            <p>
+                Official MSTC Blockchain website.
+            </p>
+
+            <a
+              href="https://mstblockchain.com"
+              target="_blank"
+              rel="noopener noreferrer">
+              Visit MSTC
+            </a>
+        </div>
+
+
+        <div class="info-card">
+            <h3>MSTScan Explorer</h3>
+            <p>
+                Explore MSTC blockchain network data.
+            </p>
+
+            <a
+              id="explorerLink"
+              href="https://mstscan.com"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open Explorer
+            </a>
+        </div>
+
+
+        <div class="info-card">
+            <h3>API Documentation</h3>
+            <p>
+                MSTScan API documentation and blockchain
+                data endpoints.
+            </p>
+
+            <a
+              href="https://mstscan.com/api-docs"
+              target="_blank"
+              rel="noopener noreferrer">
+              API Docs
+            </a>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="container">
+
+    <p>
+        © 2026 AJJRA TECHNO HUB
+    </p>
+
+    <p>
+        MSTC Blockchain • Live Statistics
+    </p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* ================================
+   MSTC NETWORK CONFIGURATION
+================================ */
+
+const NETWORKS = {
+
+    mainnet: {
+        name: "MSTC Mainnet",
+        coin: "MSTC",
+        explorer: "https://mstscan.com",
+        apiV2: "https://mstscan.com/api/v2",
+        apiLegacy: "https://mstscan.com/api",
+        chainId: 4646
+    },
+
+    testnet: {
+        name: "MSTC Testnet",
+        coin: "tMSTC",
+        explorer: "https://testnet.mstscan.com",
+        apiV2: "https://testnet.mstscan.com/api/v2",
+        apiLegacy: "https://testnet.mstscan.com/api",
+        chainId: 91562037
+    }
+
+};
+
+
+/* ================================
+   VARIABLES
+================================ */
+
+let currentNetwork = "mainnet";
+let activeApi = null;
+
+
+/* ================================
+   HELPERS
+================================ */
+
+function $(id){
+    return document.getElementById(id);
+}
+
+
+function formatNumber(value){
+
+    if(value === null || value === undefined || value === ""){
+        return "—";
+    }
+
+    if(typeof value === "string"){
+
+        const clean = value.replace(/,/g,"").trim();
+
+        if(clean === ""){
+            return "—";
+        }
+
+        if(/[a-zA-Z]/.test(clean)){
+            return value;
+        }
+
+        const number = Number(clean);
+
+        if(!Number.isNaN(number)){
+            return number.toLocaleString("en-US");
+        }
+
+        return value;
+    }
+
+    const number = Number(value);
+
+    if(Number.isNaN(number)){
+        return String(value);
+    }
+
+    return number.toLocaleString("en-US");
+}
+
+
+function firstValue(obj, keys){
+
+    for(const key of keys){
+
+        if(
+            obj &&
+            obj[key] !== undefined &&
+            obj[key] !== null &&
+            obj[key] !== ""
+        ){
+            return obj[key];
+        }
+    }
+
+    return null;
+}
+
+
+function normalizeResponse(data){
+
+    if(
+        data &&
+        typeof data === "object" &&
+        data.data &&
+        typeof data.data === "object"
+    ){
+        return data.data;
+    }
+
+    return data || {};
+}
+
+
+function setValue(id,value){
+
+    const element = $(id);
+
+    if(element){
+        element.textContent = value;
+    }
+}
+
+
+function formatCoin(value, coin){
+
+    if(value === null || value === undefined || value === ""){
+        return "—";
+    }
+
+    const str = String(value);
+
+    if(/[a-zA-Z]/.test(str)){
+        return str;
+    }
+
+    return formatNumber(value) + " " + coin;
+}
+
+
+/* ================================
+   API FETCH
+================================ */
+
+async function fetchFromApi(path){
+
+    const network = NETWORKS[currentNetwork];
+
+    const urls = [
+
+        network.apiV2 + path,
+
+        network.apiLegacy + path
+
+    ];
+
+    let lastError = null;
+
+    for(const url of urls){
+
+        try{
+
+            const controller = new AbortController();
+
+            const timeout = setTimeout(
+                () => controller.abort(),
+                10000
+            );
+
+            const response = await fetch(url,{
+                method:"GET",
+                cache:"no-store",
+                signal:controller.signal,
+                headers:{
+                    "Accept":"application/json"
+                }
+            });
+
+            clearTimeout(timeout);
+
+            if(!response.ok){
+                throw new Error(
+                    "HTTP " + response.status
+                );
+            }
+
+            const data = await response.json();
+
+            activeApi = url;
+
+            return normalizeResponse(data);
+
+        }catch(error){
+
+            lastError = error;
+
+        }
+
+    }
+
+    throw lastError || new Error("API unavailable");
+}
+
+
+/* ================================
+   NETWORK UI
+================================ */
+
+function updateNetworkUI(){
+
+    const network = NETWORKS[currentNetwork];
+
+    $("networkInfo").textContent =
+        network.name +
+        " • Chain ID: " +
+        network.chainId +
+        " • " +
+        network.coin;
+
+    $("explorerLink").href = network.explorer;
+
+}
+
+
+/* ================================
+   LOAD NETWORK STATS
+================================ */
+
+async function loadStats(){
+
+    try{
+
+        const stats = await fetchFromApi("/stats");
+
+        const network = NETWORKS[currentNetwork];
+
+        /* TOTAL BLOCKS */
+
+        setValue(
+            "totalBlocks",
+            formatNumber(
+                firstValue(stats,[
+                    "total_blocks",
+                    "blocks",
+                    "block_count"
+                ])
+            )
+        );
+
+
+        /* TOTAL TRANSACTIONS */
+
+        setValue(
+            "totalTransactions",
+            formatNumber(
+                firstValue(stats,[
+                    "total_transactions",
+                    "transactions",
+                    "txns"
+                ])
+            )
+        );
+
+
+        /* COMPLETED TRANSACTIONS */
+
+        setValue(
+            "completedTransactions",
+            formatNumber(
+                firstValue(stats,[
+                    "completed_transactions",
+                    "transactions_completed",
+                    "completed_txns"
+                ])
+            )
+        );
+
+
+        /* TOTAL ADDRESSES */
+
+        setValue(
+            "totalAddresses",
+            formatNumber(
+                firstValue(stats,[
+                    "total_addresses",
+                    "addresses"
+                ])
+            )
+        );
+
+
+        /* TOTAL ACCOUNTS */
+
+        setValue(
+            "totalAccounts",
+            formatNumber(
+                firstValue(stats,[
+                    "total_accounts",
+                    "accounts"
+                ])
+            )
+        );
+
+
+        /* TOTAL CONTRACTS */
+
+        const contractFromStats = firstValue(stats,[
+            "total_contracts",
+            "contracts",
+            "smart_contracts",
+            "deployed_contracts",
+            "smart_contract_count",
+            "total_smart_contracts"
+        ]);
+
+        if(contractFromStats !== null){
+
+            setValue(
+                "totalContracts",
+                formatNumber(contractFromStats)
+            );
+
+        }
+
+
+        /* TOTAL VERIFIED CONTRACTS */
+
+        const verifiedFromStats = firstValue(stats,[
+            "total_verified_contracts",
+            "verified_contracts",
+            "verified_smart_contracts",
+            "verified_contract_count",
+            "total_verified_smart_contracts"
+        ]);
+
+        if(verifiedFromStats !== null){
+
+            setValue(
+                "verifiedContracts",
+                formatNumber(verifiedFromStats)
+            );
+
+        }
+
+
+        /* TOTAL TOKENS */
+
+        setValue(
+            "totalTokens",
+            formatNumber(
+                firstValue(stats,[
+                    "total_tokens",
+                    "tokens",
+                    "token_count"
+                ])
+            )
+        );
+
+
+        /* TRANSACTIONS 24H */
+
+        setValue(
+            "transactions24h",
+            formatNumber(
+                firstValue(stats,[
+                    "transactions_24h",
+                    "transactions_today",
+                    "txns_24h"
+                ])
+            )
+        );
+
+
+        /* PENDING */
+
+        setValue(
+            "pendingTransactions",
+            formatNumber(
+                firstValue(stats,[
+                    "pending_transactions",
+                    "transactions_pending",
+                    "pending_txns"
+                ])
+            )
+        );
+
+
+        /* MSTC TRANSFERS */
+
+        setValue(
+            "totalTransfers",
+            formatNumber(
+                firstValue(stats,[
+                    "total_coin_transfers",
+                    "total_mstc_transfers",
+                    "total_transfers",
+                    "mstc_transfers"
+                ])
+            )
+        );
+
+
+        /* CONTRACTS TODAY */
+
+        setValue(
+            "contractsToday",
+            formatNumber(
+                firstValue(stats,[
+                    "contracts_today",
+                    "new_contracts_today",
+                    "contracts_deployed_today"
+                ])
+            )
+        );
+
+
+        /* VERIFIED TODAY */
+
+        setValue(
+            "verifiedToday",
+            formatNumber(
+                firstValue(stats,[
+                    "verified_contracts_today",
+                    "new_verified_contracts_today",
+                    "verified_smart_contracts_today"
+                ])
+            )
+        );
+
+
+        $("statusText").textContent =
+            "Live • " +
+            network.name +
+            " • Updated " +
+            new Date().toLocaleTimeString();
+
+    }catch(error){
+
+        console.error("Stats error:",error);
+
+        $("statusText").textContent =
+            "Unable to load live statistics";
+
+    }
+
+}
+
+
+/* ================================
+   CONTRACT COUNTERS
+================================ */
+
+async function loadContractCounters(){
+
+    try{
+
+        const data =
+            await fetchFromApi(
+                "/smart-contracts/counters"
+            );
+
+        /* DEPLOYED CONTRACTS */
+
+        const deployed = firstValue(data,[
+            "smart_contracts",
+            "total_contracts",
+            "contracts",
+            "deployed_contracts",
+            "smart_contract_count",
+            "total_smart_contracts"
+        ]);
+
+        if(deployed !== null){
+
+            setValue(
+                "totalContracts",
+                formatNumber(deployed)
+            );
+
+        }
+
+
+        /* VERIFIED CONTRACTS */
+
+        const verified = firstValue(data,[
+            "verified_smart_contracts",
+            "total_verified_contracts",
+            "verified_contracts",
+            "verified_contract_count",
+            "total_verified_smart_contracts"
+        ]);
+
+        if(verified !== null){
+
+            setValue(
+                "verifiedContracts",
+                formatNumber(verified)
+            );
+
+        }
+
+    }catch(error){
+
+        console.warn(
+            "Contract counters unavailable:",
+            error
+        );
+
+    }
+
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+function openSearch(){
+
+    const value =
+        $("searchInput").value.trim();
+
+    const network =
+        NETWORKS[currentNetwork];
+
+    if(!value){
+
+        window.open(
+            network.explorer,
+            "_blank"
+        );
+
+        return;
+    }
+
+    window.open(
+        network.explorer +
+        "/search?q=" +
+        encodeURIComponent(value),
+        "_blank"
+    );
+
+}
+
+
+/* ENTER KEY SEARCH */
+
+$("searchInput").addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            openSearch();
+        }
+
+    }
+);
+
+
+/* ================================
+   REFRESH
+================================ */
+
+async function refreshAll(){
+
+    updateNetworkUI();
+
+    $("statusText").textContent =
+        "Loading live statistics...";
+
+    await Promise.allSettled([
+
+        loadStats(),
+
+        loadContractCounters()
+
+    ]);
+
+}
+
+
+/* ================================
+   NETWORK CHANGE
+================================ */
+
+$("network").addEventListener(
+    "change",
+    function(){
+
+        currentNetwork = this.value;
+
+        activeApi = null;
+
+        /* Clear old numbers */
+
+        [
+            "totalBlocks",
+            "totalTransactions",
+            "completedTransactions",
+            "totalAddresses",
+            "totalAccounts",
+            "totalContracts",
+            "verifiedContracts",
+            "totalTokens",
+            "transactions24h",
+            "pendingTransactions",
+            "totalTransfers",
+            "contractsToday",
+            "verifiedToday"
+
+        ].forEach(function(id){
+
+            setValue(id,"—");
+
+        });
+
+        refreshAll();
+
+    }
+);
+
+
+/* ================================
+   START
+================================ */
+
+refreshAll();
+
+
+/* AUTO REFRESH EVERY 15 SECONDS */
+
+setInterval(
+    refreshAll,
+    15000
+);
+
+</script>
+
+</body>
+</html>
