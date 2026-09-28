@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>AJJRA TECHNO HUB | MSTC Statistics</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    color:#fff;
+}
+.container{
+    width:94%;
+    max-width:1100px;
+    margin:auto;
+}
+header{
+    text-align:center;
+    padding:45px 10px 30px;
+}
+h1{
+    margin:0;
+    font-size:38px;
+}
+h1 span{color:#20e0a5}
+.subtitle{
+    color:#9db0c5;
+    margin-top:10px;
+}
+.register{
+    display:inline-block;
+    margin-top:22px;
+    padding:13px 25px;
+    border-radius:9px;
+    background:#20e0a5;
+    color:#06131b;
+    font-weight:bold;
+    text-decoration:none;
+}
+.network{
+    margin:20px 0;
+    padding:18px;
+    background:#0c1a2b;
+    border:1px solid #20364f;
+    border-radius:14px;
+}
+select{
+    width:100%;
+    padding:13px;
+    background:#07111f;
+    color:#fff;
+    border:1px solid #29445f;
+    border-radius:8px;
+}
+.status{
+    text-align:center;
+    color:#20e0a5;
+    margin:18px 0;
+    font-size:14px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    padding-bottom:50px;
+}
+.card{
+    background:#0c1a2b;
+    border:1px solid #20364f;
+    border-radius:14px;
+    padding:22px;
+    min-height:115px;
+}
+.label{
+    color:#91a5ba;
+    font-size:14px;
+}
+.value{
+    margin-top:12px;
+    color:#20e0a5;
+    font-size:28px;
+    font-weight:bold;
+    word-break:break-word;
+}
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid #20364f;
+    color:#71859a;
+}
+@media(max-width:800px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:500px){
+    .grid{grid-template-columns:1fr}
+    h1{font-size:30px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+
+        <h1>AJJRA <span>TECHNO HUB</span></h1>
+
+        <div class="subtitle">
+            MSTC Blockchain Live Statistics
+        </div>
+
+        <a
+          class="register"
+          href="https://mstblockchain.com/portal/register/VeY52672"
+          target="_blank"
+          rel="noopener noreferrer">
+          Register on MSTC
+        </a>
+
+    </div>
+</header>
+
+
+<main class="container">
+
+    <div class="network">
+
+        <select id="network">
+            <option value="mainnet">MSTC Mainnet</option>
+            <option value="testnet">MSTC Testnet</option>
+        </select>
+
+    </div>
+
+    <div class="status" id="status">
+        Loading live values...
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="label">Total Blocks</div>
+            <div class="value" id="totalBlocks">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Total Transactions</div>
+            <div class="value" id="totalTransactions">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Completed Transactions</div>
+            <div class="value" id="completedTransactions">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Total Addresses</div>
+            <div class="value" id="totalAddresses">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Total Accounts</div>
+            <div class="value" id="totalAccounts">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Deployed Contracts</div>
+            <div class="value" id="deployedContracts">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Verified Contracts</div>
+            <div class="value" id="verifiedContracts">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Total Tokens</div>
+            <div class="value" id="totalTokens">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Transactions 24h</div>
+            <div class="value" id="transactions24h">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Pending Transactions</div>
+            <div class="value" id="pendingTransactions">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">MSTC Transfers</div>
+            <div class="value" id="mstcTransfers">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Contracts Today</div>
+            <div class="value" id="contractsToday">—</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Verified Contracts Today</div>
+            <div class="value" id="verifiedContractsToday">—</div>
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+    AJJRA TECHNO HUB • MSTC Blockchain
+</footer>
+
+
+<script>
+
+const NETWORKS = {
+
+    mainnet:{
+        api:"https://mstscan.com/api/v2",
+        explorer:"https://mstscan.com",
+        coin:"MSTC"
+    },
+
+    testnet:{
+        api:"https://testnet.mstscan.com/api/v2",
+        explorer:"https://testnet.mstscan.com",
+        coin:"tMSTC"
+    }
+
+};
+
+
+let selectedNetwork = "mainnet";
+
+
+function el(id){
+    return document.getElementById(id);
+}
+
+
+function set(id,value){
+
+    el(id).textContent =
+        value === null ||
+        value === undefined ||
+        value === ""
+        ? "—"
+        : Number.isFinite(Number(value))
+            ? Number(value).toLocaleString("en-US")
+            : value;
+
+}
+
+
+function get(obj,keys){
+
+    for(const key of keys){
+
+        if(
+            obj &&
+            obj[key] !== undefined &&
+            obj[key] !== null &&
+            obj[key] !== ""
+        ){
+            return obj[key];
+        }
+
+    }
+
+    return null;
+}
+
+
+async function api(path){
+
+    const base =
+        NETWORKS[selectedNetwork].api;
+
+    const response =
+        await fetch(
+            base + path,
+            {
+                cache:"no-store"
+            }
+        );
+
+    if(!response.ok){
+
+        throw new Error(
+            "API error " + response.status
+        );
+
+    }
+
+    const json =
+        await response.json();
+
+    return json.data || json;
+
+}
+
+
+/* =========================
+   MAIN STATS
+========================= */
+
+async function loadStats(){
+
+    const data =
+        await api("/stats");
+
+
+    set(
+        "totalBlocks",
+        get(data,[
+            "total_blocks",
+            "blocks"
+        ])
+    );
+
+
+    set(
+        "totalTransactions",
+        get(data,[
+            "total_transactions",
+            "transactions",
+            "txns"
+        ])
+    );
+
+
+    set(
+        "completedTransactions",
+        get(data,[
+            "completed_transactions",
+            "transactions_completed",
+            "completed_txns"
+        ])
+    );
+
+
+    set(
+        "totalAddresses",
+        get(data,[
+            "total_addresses",
+            "addresses"
+        ])
+    );
+
+
+    set(
+        "totalAccounts",
+        get(data,[
+            "total_accounts",
+            "accounts"
+        ])
+    );
+
+
+    set(
+        "totalTokens",
+        get(data,[
+            "total_tokens",
+            "tokens"
+        ])
+    );
+
+
+    set(
+        "transactions24h",
+        get(data,[
+            "transactions_24h",
+            "txns_24h",
+            "transactions_today"
+        ])
+    );
+
+
+    set(
+        "pendingTransactions",
+        get(data,[
+            "pending_transactions",
+            "transactions_pending",
+            "pending_txns"
+        ])
+    );
+
+
+    set(
+        "mstcTransfers",
+        get(data,[
+            "total_coin_transfers",
+            "total_mstc_transfers",
+            "total_transfers",
+            "mstc_transfers"
+        ])
+    );
+
+
+    set(
+        "contractsToday",
+        get(data,[
+            "contracts_today",
+            "new_contracts_today",
+            "contracts_deployed_today"
+        ])
+    );
+
+
+    set(
+        "verifiedContractsToday",
+        get(data,[
+            "verified_contracts_today",
+            "new_verified_contracts_today",
+            "verified_smart_contracts_today"
+        ])
+    );
+
+}
+
+
+/* =========================
+   CONTRACT COUNTERS
+========================= */
+
+async function loadContractCounters(){
+
+    const data =
+        await api(
+            "/smart-contracts/counters"
+        );
+
+
+    set(
+        "deployedContracts",
+        get(data,[
+            "smart_contracts",
+            "total_contracts",
+            "contracts",
+            "deployed_contracts",
+            "smart_contract_count",
+            "total_smart_contracts"
+        ])
+    );
+
+
+    set(
+        "verifiedContracts",
+        get(data,[
+            "verified_smart_contracts",
+            "total_verified_contracts",
+            "verified_contracts",
+            "verified_contract_count",
+            "total_verified_smart_contracts"
+        ])
+    );
+
+}
+
+
+/* =========================
+   LOAD EVERYTHING
+========================= */
+
+async function refresh(){
+
+    el("status").textContent =
+        "Loading " +
+        (selectedNetwork === "mainnet"
+            ? "MSTC Mainnet"
+            : "MSTC Testnet") +
+        "...";
+
+    try{
+
+        await Promise.all([
+            loadStats(),
+            loadContractCounters()
+        ]);
+
+        el("status").textContent =
+            "● LIVE • Updated " +
+            new Date().toLocaleTimeString();
+
+    }catch(error){
+
+        console.error(error);
+
+        el("status").textContent =
+            "Unable to load MSTScan API";
+
+    }
+
+}
+
+
+/* =========================
+   NETWORK SWITCH
+========================= */
+
+el("network").addEventListener(
+    "change",
+    function(){
+
+        selectedNetwork =
+            this.value;
+
+        refresh();
+
+    }
+);
+
+
+/* START */
+
+refresh();
+
+
+/* AUTO UPDATE */
+
+setInterval(
+    refresh,
+    15000
+);
+
+</script>
+
+</body>
+</html>
